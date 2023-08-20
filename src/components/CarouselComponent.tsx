@@ -35,7 +35,13 @@ function CarouselComponent() {
   const productTemplate = (image: Image) => {
     return (
       <div className="mb-3">
-        <Image src={image.name} preview width="100%" height="100%" />
+        <Image
+          src={image.name}
+          preview
+          width="100vw"
+          height="100vh"
+          alt="Image"
+        />
         {/* <img src={image.name} alt={image.name} /> */}
       </div>
     );
@@ -43,15 +49,15 @@ function CarouselComponent() {
 
   return (
     <div className="card">
-      <h1>Aprende de Redes</h1>
+      <h1 align="center">Aprende de Redes</h1>
       <Carousel
         value={images}
         numVisible={1}
         numScroll={1}
         responsiveOptions={responsiveOptions}
         itemTemplate={productTemplate}
-        // circular
-        // autoplayInterval={3000}
+        circular
+        autoplayInterval={3000}
       />
     </div>
   );
