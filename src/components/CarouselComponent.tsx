@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Carousel, CarouselResponsiveOption } from "primereact/carousel";
+import { Image } from "primereact/image";
 import ImagesJSON from "../mocks/imagesUrl.json";
 
 function CarouselComponent() {
@@ -34,7 +35,8 @@ function CarouselComponent() {
   const productTemplate = (image: Image) => {
     return (
       <div className="mb-3">
-        <img src={image.name} alt={image.name} />
+        <Image src={image.name} preview width="100%" height="100%" />
+        {/* <img src={image.name} alt={image.name} /> */}
       </div>
     );
   };
@@ -48,8 +50,8 @@ function CarouselComponent() {
         numScroll={1}
         responsiveOptions={responsiveOptions}
         itemTemplate={productTemplate}
-        circular
-        autoplayInterval={3000}
+        // circular
+        // autoplayInterval={3000}
       />
     </div>
   );
