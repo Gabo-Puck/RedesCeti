@@ -34,14 +34,21 @@ function CarouselComponent() {
 
   const productTemplate = (image: Image) => {
     return (
-      <div className="mb-3">
-        <Image
+      <div
+        className="mb-3"
+        style={{
+          backgroundImage: `url(${image.name})`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "contain",
+        }}
+      >
+        {/* <Image
           src={image.name}
           preview
           width="100vw"
           height="100vh"
           alt="Image"
-        />
+        /> */}
         {/* <img src={image.name} alt={image.name} /> */}
       </div>
     );
@@ -56,8 +63,8 @@ function CarouselComponent() {
         numScroll={1}
         responsiveOptions={responsiveOptions}
         itemTemplate={productTemplate}
-        circular
-        autoplayInterval={3000}
+        // circular
+        // autoplayInterval={3000}
       />
     </div>
   );
