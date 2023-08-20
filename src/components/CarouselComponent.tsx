@@ -41,12 +41,15 @@ function CarouselComponent() {
 
   return (
     <div className="card">
+      <h1>Aprende de Redes</h1>
       <Carousel
         value={images}
         numVisible={1}
         numScroll={1}
         responsiveOptions={responsiveOptions}
         itemTemplate={productTemplate}
+        circular
+        autoplayInterval={3000}
       />
     </div>
   );
