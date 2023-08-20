@@ -49,7 +49,7 @@ function CarouselComponent() {
 
   return (
     <div className="card">
-      <h1 align="center">Aprende de Redes</h1>
+      <h1>Aprende de Redes</h1>
       <Carousel
         value={images}
         numVisible={1}
