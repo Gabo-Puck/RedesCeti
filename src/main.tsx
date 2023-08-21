@@ -11,7 +11,11 @@ import "flowbite/dist/flowbite.css";
 // import Index from "./Index.tsx";
 import Root from "./pages/Root.tsx";
 import Home from "./pages/Home.tsx";
-import ComunicacionLanEthernet from "./pages/ComunicacionLanEthernet.tsx";
+import routerUnidad4 from "./pages/Chapter4/root.tsx";
+import Lesson from "./pages/Lesson.tsx";
+import routerUnidad1 from "./pages/Chapter1/root.tsx";
+import routerUnidad2 from "./pages/Chapter2/root.tsx";
+import routerUnidad3 from "./pages/Chapter3/root.tsx";
 
 const router = createBrowserRouter([
   {
@@ -20,8 +24,13 @@ const router = createBrowserRouter([
     children: [
       { element: <Home />, index: true },
       {
-        element: <ComunicacionLanEthernet />, index: true,
-        path: "lol"
+        element: <Lesson />, path: "unidades", children: [
+          routerUnidad1,
+          routerUnidad2,
+          routerUnidad3,
+          routerUnidad4
+
+        ]
       }
     ]
   },

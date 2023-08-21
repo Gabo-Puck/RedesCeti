@@ -6,7 +6,6 @@ export default function Root() {
     return <>
         <NavBar />
         <Outlet />
-        <Link to={"/lol"}>LOL</Link>
         <FooterBar />
     </>
 }
