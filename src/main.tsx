@@ -8,12 +8,22 @@ import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import "flowbite/dist/flowbite.css";
 
-import Index from "./Index.tsx";
+// import Index from "./Index.tsx";
+import Root from "./pages/Root.tsx";
+import Home from "./pages/Home.tsx";
+import ComunicacionLanEthernet from "./pages/ComunicacionLanEthernet.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Index />,
+    element: <Root />,
+    children: [
+      { element: <Home />, index: true },
+      {
+        element: <ComunicacionLanEthernet />, index: true,
+        path: "lol"
+      }
+    ]
   },
 ]);
 
