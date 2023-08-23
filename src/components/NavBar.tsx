@@ -13,6 +13,9 @@ function NavBar() {
       items: [
         {
           label: "1.1 Elementos de comunicacion y comunicacion de mensajes",
+          command: () => {
+            navigate("/Tema1.1");
+          },
         },
         {
           label: "1.2 Componentes de la red",
@@ -70,6 +73,7 @@ function NavBar() {
       items: [
         {
           label: "2.1 Capa de aplicación",
+
           items: [
             {
               label: "2.1.1 Modelo cliente servidor",

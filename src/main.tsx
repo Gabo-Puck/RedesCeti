@@ -16,6 +16,7 @@ import Lesson from "./pages/Lesson.tsx";
 import routerUnidad1 from "./pages/Chapter1/root.tsx";
 import routerUnidad2 from "./pages/Chapter2/root.tsx";
 import routerUnidad3 from "./pages/Chapter3/root.tsx";
+import ElementosDeComunicacionPage from "./Pages/Chapter1/Tema1.1.tsx";
 
 const router = createBrowserRouter([
   {
@@ -24,15 +25,15 @@ const router = createBrowserRouter([
     children: [
       { element: <Home />, index: true },
       {
-        element: <Lesson />, path: "unidades", children: [
-          routerUnidad1,
-          routerUnidad2,
-          routerUnidad3,
-          routerUnidad4
-
-        ]
-      }
-    ]
+        element: <Lesson />,
+        path: "unidades",
+        children: [routerUnidad1, routerUnidad2, routerUnidad3, routerUnidad4],
+      },
+    ],
+  },
+  {
+    path: "/Tema1.1",
+    element: <ElementosDeComunicacionPage />,
   },
 ]);
 
