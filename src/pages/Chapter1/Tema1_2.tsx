@@ -2,7 +2,7 @@ import React from "react";
 import NavBar from "../../components/NavBar";
 import FooterBar from "../../components/FooterBar";
 
-function ComponentesRed() {
+function ComponentesRedPage() {
   return (
     <div>
       <NavBar />
@@ -12,4 +12,4 @@ function ComponentesRed() {
   );
 }
 
-export default ComponentesRed;
+export default ComponentesRedPage;
