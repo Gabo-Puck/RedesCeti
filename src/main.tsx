@@ -19,7 +19,7 @@ import "flowbite/dist/flowbite.css";
 // import ElementosDeComunicacionPage from "./Pages/Chapter1/Tema1_1.tsx";
 import Index from "./Index.tsx";
 import ElementosDeComunicacionPage from "./Pages/Chapter1/Tema1_1.tsx";
-import ComponentesRedPage from "./Pages/Chapter1/Tema1_2.tsx";
+import ComponentesRedPage from "./Pages/Chapter1/Tema1_2/Tema1_2.tsx";
 
 const router = createBrowserRouter([
   {
