@@ -6,7 +6,7 @@ function ComponentesRedPage() {
   return (
     <div>
       <NavBar />
-      <p>Tema1.2</p>
+
       <FooterBar />
     </div>
   );
