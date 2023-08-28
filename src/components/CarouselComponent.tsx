@@ -52,7 +52,6 @@ function CarouselComponent() {
     <div className="card">
       <ReactPlayer
         url={"https://www.youtube.com/embed/NvdvxTB9p9E"}
-        controls
         width="100%"
         height="80vh"
         muted

@@ -1,0 +1,2 @@
+- Every chapter has a unique folder
+- In those folders must be a root.tsx file where every route for the chapter should be added
