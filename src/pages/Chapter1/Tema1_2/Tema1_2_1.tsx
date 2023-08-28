@@ -2,10 +2,16 @@ import { Divider } from "primereact/divider";
 import { Panel } from "primereact/panel";
 import React from "react";
 
+import DispositivosRedImg from "../../../assets/images/DispositivosRed.jpg";
+import { Image } from "primereact/image";
+
 function Tema1_2_1() {
   return (
     <div>
-      <Panel header="Las bases de las redes: switches, routers y access points inalámbricos">
+      <Panel
+        header="Las bases de las redes: switches, routers y access points inalámbricos"
+        toggleable
+      >
         <p>
           Los switches, los routers y los access points inalámbricos son los
           conceptos básicos esenciales de las redes. A través de ellos, los
@@ -13,8 +19,13 @@ function Tema1_2_1() {
           otras redes, como Internet. Los switches, routers y access points
           inalámbricos realizan funciones muy diferentes dentro de una red.
         </p>
+        <Image
+          src={DispositivosRedImg}
+          style={{ width: "100%", height: "auto" }}
+          preview
+        />
       </Panel>
-      <Panel header="Switches">
+      <Panel header="Switches" toggleable>
         <p>
           Los switches son la base de la mayoría de las redes empresariales. Un
           switch actúa como un controlador, que conecta computadoras, impresoras
@@ -45,8 +56,13 @@ function Tema1_2_1() {
             automáticas enviadas directamente al switch
           </li>
         </ul>
+        <Image
+          src="https://media.fs.com/images/community/upload/kindEditor/202106/16/aplicacion-de-switch-de-convergencia-1623810962-5MHDeKRrbq.png"
+          style={{ width: "100%", height: "auto" }}
+          preview
+        />
       </Panel>
-      <Panel header="Routers">
+      <Panel header="Routers" toggleable>
         <p>
           Los routers conectan varias redes. También conectan computadoras en
           esas redes a Internet. Los routers permiten que todas las computadoras
@@ -69,8 +85,13 @@ function Tema1_2_1() {
           elegir un router con un firewall, una red privada virtual (VPN) o un
           sistema de comunicaciones con protocolo de Internet (IP).
         </p>
+        <Image
+          src="https://redestelematicas.com/wp-content/uploads/2013/06/Figura-08.union-con-router.jpg"
+          style={{ width: "100%", height: "auto" }}
+          preview
+        />
       </Panel>
-      <Panel header="Access Points">
+      <Panel header="Access Points" toggleable>
         <p>
           Un access point permite que los dispositivos se conecten a la red
           inalámbrica sin cables. Una red inalámbrica facilita la conexión de
@@ -96,6 +117,11 @@ function Tema1_2_1() {
           proporcionan distintos anchos de banda y admiten distintas cantidades
           de canales.
         </p>
+        <Image
+          src="https://www.informaticamoderna.com/Acces_point_archivos/seguridad.jpg"
+          style={{ width: "100%", height: "auto" }}
+          preview
+        />
       </Panel>
     </div>
   );
