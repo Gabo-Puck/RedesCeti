@@ -12,8 +12,11 @@ import EncapsulamientoMensaheImg from "../../assets/images/EncapsulamientoMensaj
 import OpcionesMensaje1 from "../../assets/images/OpcionesMensaje1.png";
 import OpcionesMensaje2 from "../../assets/images/OpcionesMensaje2.png";
 import OpcionesMensaje3 from "../../assets/images/OpcionesMensaje3.png";
+import { Button } from "primereact/button";
+import { useNavigate } from "react-router-dom";
 
 function ElementosDeComunicacionPage() {
+  const navigate = useNavigate();
   return (
     <div>
       <NavBar />
@@ -230,6 +233,16 @@ function ElementosDeComunicacionPage() {
           </ul>
         </div>
       </Panel>
+
+      <Button
+        style={{ alignItems: "center" }}
+        label="Siguiente Tema"
+        link
+        icon="pi pi-arrow-circle-right"
+        onClick={() => {
+          navigate("/Tema1.2");
+        }}
+      />
 
       <FooterBar />
     </div>
