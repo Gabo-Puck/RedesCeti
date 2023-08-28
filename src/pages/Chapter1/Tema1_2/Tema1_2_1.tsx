@@ -1,38 +1,128 @@
 import { Divider } from "primereact/divider";
+import { Panel } from "primereact/panel";
 import React from "react";
+
+import DispositivosRedImg from "../../../assets/images/DispositivosRed.jpg";
+import { Image } from "primereact/image";
 
 function Tema1_2_1() {
   return (
-    <div className="card flex justify-content-center">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
-      </p>
-      <Divider layout="vertical" />
-      <p>
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
-        illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-        explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
-        odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-        voluptatem sequi nesciunt. Consectetur, adipisci velit, sed quia non
-        numquam eius modi.
-      </p>
-      <Divider layout="vertical" />
-      <p>
-        At vero eos et accusamus et iusto odio dignissimos ducimus qui
-        blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
-        et quas molestias excepturi sint occaecati cupiditate non provident,
-        similique sunt in culpa qui officia deserunt mollitia animi, id est
-        laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita
-        distinctio. Nam libero tempore, cum soluta nobis est eligendi optio
-        cumque nihil impedit quo minus.
-      </p>
+    <div>
+      <Panel
+        header="Las bases de las redes: switches, routers y access points inalámbricos"
+        toggleable
+      >
+        <p>
+          Los switches, los routers y los access points inalámbricos son los
+          conceptos básicos esenciales de las redes. A través de ellos, los
+          dispositivos conectados a su red pueden comunicarse entre sí y con
+          otras redes, como Internet. Los switches, routers y access points
+          inalámbricos realizan funciones muy diferentes dentro de una red.
+        </p>
+        <Image
+          src={DispositivosRedImg}
+          style={{ width: "100%", height: "auto" }}
+          preview
+        />
+      </Panel>
+      <Panel header="Switches" toggleable>
+        <p>
+          Los switches son la base de la mayoría de las redes empresariales. Un
+          switch actúa como un controlador, que conecta computadoras, impresoras
+          y servidores a una red en un edificio o campus.
+        </p>
+        <p>
+          Los switches permiten que los dispositivos en su red se comuniquen
+          entre sí, así como con otras redes, y creen una red de recursos
+          compartidos. Mediante el uso compartido de información y la asignación
+          de recursos, los switches ahorran dinero y aumentan la productividad.
+          Hay dos tipos básicos de switches para elegir como parte de sus
+          conceptos básicos de red: en las instalaciones y administrados en la
+          nube.
+        </p>
+        <ul
+          style={{ listStyle: "initial", marginLeft: "40px" }}
+          className="m-0"
+        >
+          <li>
+            Un conmutador administrado en las instalaciones le permite
+            configurar y monitorear su LAN, y le proporciona un contrul más
+            estricto de su tráfico de red.
+          </li>
+          <li>
+            Un switch administrado en la nube puede simplificar la
+            administración de redes. Obtiene una interfaz de usuario simple,
+            administración completa de varios sitios y actualizaciones
+            automáticas enviadas directamente al switch
+          </li>
+        </ul>
+        <Image
+          src="https://media.fs.com/images/community/upload/kindEditor/202106/16/aplicacion-de-switch-de-convergencia-1623810962-5MHDeKRrbq.png"
+          style={{ width: "100%", height: "auto" }}
+          preview
+        />
+      </Panel>
+      <Panel header="Routers" toggleable>
+        <p>
+          Los routers conectan varias redes. También conectan computadoras en
+          esas redes a Internet. Los routers permiten que todas las computadoras
+          en red compartan una única conexión a Internet, lo que ahorra dinero.
+        </p>
+        <p>
+          Un router actúa como distribuidor. Analiza los datos que se envían a
+          través de una red, elige la mejor ruta para que se desplacen los datos
+          y los envía en su camino.
+        </p>
+        <p>
+          Los routers conectan su empresa con el mundo, protegen la información
+          contra amenazas de seguridad e incluso pueden decidir qué computadoras
+          tienen prioridad sobre otros.
+        </p>
+        <p>
+          Más allá de esas funciones básicas de red, los routers tienen
+          características adicionales para hacer que las redes sean más fáciles
+          o más seguras. Según sus necesidades de seguridad, por ejemplo, puede
+          elegir un router con un firewall, una red privada virtual (VPN) o un
+          sistema de comunicaciones con protocolo de Internet (IP).
+        </p>
+        <Image
+          src="https://redestelematicas.com/wp-content/uploads/2013/06/Figura-08.union-con-router.jpg"
+          style={{ width: "100%", height: "auto" }}
+          preview
+        />
+      </Panel>
+      <Panel header="Access Points" toggleable>
+        <p>
+          Un access point permite que los dispositivos se conecten a la red
+          inalámbrica sin cables. Una red inalámbrica facilita la conexión de
+          dispositivos nuevos y les brinda soporte flexible a los trabajadores
+          móviles.
+        </p>
+        <p>
+          Un access point actúa como un amplificador para su red. Mientras que
+          un router proporciona el ancho de banda, un access point amplía ese
+          ancho de banda para que la red pueda admitir muchos dispositivos, y
+          esos dispositivos pueden acceder a la red desde más lejos.
+        </p>
+        <p>
+          Sin embargo, un access point no se limita a extender la red Wi-Fi.
+          También puede brindar datos valiosos sobre los dispositivos conectados
+          a la red, proporcionar seguridad proactiva y responder a muchos otros
+          fines prácticos.
+        </p>
+        <p>
+          * Los access points son compatibles con diferentes estándares IEEE.
+          Cada estándar es una modificación que recibe aprobación después de
+          cierto tiempo. Los estándares funcionan con diversas frecuencias,
+          proporcionan distintos anchos de banda y admiten distintas cantidades
+          de canales.
+        </p>
+        <Image
+          src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Wlan_www.png"
+          style={{ width: "100%", height: "auto" }}
+          preview
+        />
+      </Panel>
     </div>
   );
 }
