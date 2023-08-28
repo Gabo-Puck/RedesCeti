@@ -7,18 +7,23 @@ export default function LessonControls() {
     <div className="flex justify-end">
       <div className="flex space-x-4">
         <Button
+          label="Anterior Tema"
+          icon="pi pi-arrow-circle-left"
+          link
           onClick={() => {
             prev();
           }}
           disabled={isFirst}
-          icon="pi pi-arrow-circle-left"
         />
         <Button
+          label="Siguiente Tema"
+          icon="pi pi-arrow-circle-right"
+          iconPos="right"
+          link
           onClick={() => {
             next();
           }}
           disabled={isLast}
-          icon="pi pi-arrow-circle-right"
         />
       </div>
     </div>

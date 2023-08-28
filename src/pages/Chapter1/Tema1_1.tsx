@@ -232,15 +232,6 @@ function ElementosDeComunicacionPage() {
           </ul>
         </div>
       </Panel>
-
-      <Button
-        label="Siguiente Tema"
-        icon="pi pi-arrow-circle-right"
-        link
-        onClick={() => {
-          navigate("/unidades/u1/Tema1_2");
-        }}
-      />
     </div>
   );
 }
