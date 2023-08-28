@@ -5,7 +5,7 @@ const routerUnidad4: RouteObject = {
     path: "u4",
     children: [
         {
-            path: "comunicacion-lan-ethernet",
+            path: "Tema4_1",
             element: <ComunicacionLanEthernet/>
         },
 

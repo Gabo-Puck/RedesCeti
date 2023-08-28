@@ -12,11 +12,13 @@ import EncapsulamientoMensaheImg from "../../assets/images/EncapsulamientoMensaj
 import OpcionesMensaje1 from "../../assets/images/OpcionesMensaje1.png";
 import OpcionesMensaje2 from "../../assets/images/OpcionesMensaje2.png";
 import OpcionesMensaje3 from "../../assets/images/OpcionesMensaje3.png";
+import { Button } from "primereact/button";
+import { useNavigate } from "react-router-dom";
 
 function ElementosDeComunicacionPage() {
+  const navigate = useNavigate();
   return (
     <div>
-      <NavBar />
       <h1 style={{ fontWeight: "bold", textAlign: "center", fontSize: "20px" }}>
         Elementos de comunicacion y comunicacion de mensajes.
       </h1>
@@ -231,7 +233,14 @@ function ElementosDeComunicacionPage() {
         </div>
       </Panel>
 
-      <FooterBar />
+      <Button
+        label="Siguiente Tema"
+        icon="pi pi-arrow-circle-right"
+        link
+        onClick={() => {
+          navigate("/unidades/u1/Tema1_2");
+        }}
+      />
     </div>
   );
 }
