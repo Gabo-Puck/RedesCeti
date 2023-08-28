@@ -28,6 +28,7 @@ function NavBar() {
             },
             {
               label: "1.2.3 Servicios",
+            
             },
           ],
         },
@@ -237,6 +238,9 @@ function NavBar() {
       items: [
         {
           label: "4.1 Comunicación a través de la LAN con Ethernet",
+          command: () => {
+            navigate("/unidades/u4/comunicacion-lan-ethernet");
+          },
         },
         {
           label: "4.2 Control de acceso al medio",
