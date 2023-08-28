@@ -19,7 +19,6 @@ function ElementosDeComunicacionPage() {
   const navigate = useNavigate();
   return (
     <div>
-
       <h1 style={{ fontWeight: "bold", textAlign: "center", fontSize: "20px" }}>
         Elementos de comunicacion y comunicacion de mensajes.
       </h1>
@@ -233,6 +232,15 @@ function ElementosDeComunicacionPage() {
           </ul>
         </div>
       </Panel>
+
+      <Button
+        label="Siguiente Tema"
+        icon="pi pi-arrow-circle-right"
+        link
+        onClick={() => {
+          navigate("/unidades/u1/Tema1_2");
+        }}
+      />
     </div>
   );
 }

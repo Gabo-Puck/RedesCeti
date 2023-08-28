@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import NavBar from "../../../components/NavBar";
-import FooterBar from "../../../components/FooterBar";
+
 import { TabMenu } from "primereact/tabmenu";
+import Tema1_2_1 from "./Tema1_2_1";
+import Tema1_2_3 from "./Tema1_2_3";
+import Tema1_2_2 from "./Tema1_2_2";
 
 function ComponentesRedPage() {
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
   return (
     <div>
-      <NavBar />
       <h1 style={{ fontWeight: "bold", textAlign: "center", fontSize: "20px" }}>
         Componentes en la red.
       </h1>
@@ -21,9 +22,9 @@ function ComponentesRedPage() {
         ]}
         onTabChange={(e) => setActiveIndex(e.index)}
       />
-      {activeIndex === 0}
-
-      <FooterBar />
+      {activeIndex === 0 && <Tema1_2_1 />}
+      {activeIndex === 1 && <Tema1_2_2 />}
+      {activeIndex === 2 && <Tema1_2_3 />}
     </div>
   );
 }

@@ -19,6 +19,9 @@ function NavBar() {
         },
         {
           label: "1.2 Componentes de la red",
+          command: () => {
+            navigate("/unidades/u1/Tema1_2");
+          },
           items: [
             {
               label: "1.2.1 Dispositivos",
@@ -28,7 +31,6 @@ function NavBar() {
             },
             {
               label: "1.2.3 Servicios",
-            
             },
           ],
         },
@@ -70,9 +72,9 @@ function NavBar() {
     },
     {
       label: "Funcionalidades de las capas del modelo OSI",
-    
+
       icon: "pi pi-server",
-     
+
       items: [
         {
           label: "2.1 Capa de aplicación",
@@ -81,7 +83,7 @@ function NavBar() {
             {
               label: "2.1.1 Modelo cliente servidor",
               command: () => {
-                navigate('/test')
+                navigate("/test");
               },
             },
             {
