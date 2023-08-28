@@ -121,7 +121,6 @@ export default function ComunicacionLanEthernet() {
                     Protocolo CSMA/CD (Carrier Sense Multiple Access with Collision Detection).
                 </h3>
                 <p>
-
                     También conocido como Acceso Múltiple por Detección de Portadora con Detección de Colisiones.
                     Es una técnica usada en redes para mejorar la entrega de paquetes. Para entender que problema resuelve este protocolo hay que entender sus partes:
                 </p>
@@ -147,8 +146,30 @@ export default function ComunicacionLanEthernet() {
         </article>
         <article className="mb-10">
             <Subtitle content={index["seguridad"]} />
-            <p className="text-gray-500 dark:text-gray-400">Ethernet es una tecnología que permite que los dispositivos de redes que estén conectados entre sí puedan comunicarse y transmitir datos.</p>
-            <p className="text-gray-500 dark:text-gray-400">LAN por su parte, como ya se vio es un conjunto de computadoras en un área pequeña con una conexión centralizada a internet</p>
+            <div className="mb-5">
+                <h3>
+                    ACLs (Listas de Control de Acceso)
+                </h3>
+                <p className="text-gray-500 dark:text-gray-400">
+                    Las ACLs, o Listas de Control de Acceso, son herramientas de seguridad utilizadas en redes para controlar y filtrar el tráfico que ingresa o sale de una red. Permiten definir reglas que especifican qué tipos de tráfico están permitidos y cuáles están bloqueados. Las ACLs pueden basarse en direcciones IP, puertos, protocolos y otros atributos. Se aplican en enrutadores y dispositivos de seguridad para restringir el acceso no autorizado y garantizar una mejor gestión del tráfico en la red.
+                </p>
+            </div>
+            <div className="mb-5">
+                <h3>
+                    Autenticación
+                </h3>
+                <p className="text-gray-500 dark:text-gray-400">
+                    La autenticación es el proceso de verificar la identidad de un usuario, dispositivo o sistema antes de permitirles el acceso a una red o servicio. Se basa en credenciales únicas, como nombres de usuario y contraseñas, certificados digitales o biometría. La autenticación es esencial para prevenir el acceso no autorizado y asegurar que solo las personas o dispositivos adecuados puedan acceder a recursos sensibles.
+                </p>
+            </div>
+            <div className="mb-5">
+                <h3>
+                    Encriptación
+                </h3>
+                <p className="text-gray-500 dark:text-gray-400">
+                    La encriptación es la técnica de codificar información para que solo las personas o sistemas autorizados puedan entenderla. Se utiliza para proteger la confidencialidad y la integridad de los datos mientras se transmiten por una red. Por lo general, la información es "traducida" como se menciono anteriormente por medio de un método de cifrado, donde las personas las cuales tienen acceso a ella requieren de una llave para poder trabajar con ella.
+                </p>
+            </div>
         </article>
 
     </div>
