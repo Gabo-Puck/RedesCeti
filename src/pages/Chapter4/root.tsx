@@ -5,17 +5,10 @@ const routerUnidad4: RouteObject = {
     path: "u4",
     children: [
         {
-            path: "comunicacion_lan_ethernet1",
+            path: "comunicacion-lan-ethernet",
             element: <ComunicacionLanEthernet/>
         },
-        {
-            path: "comunicacion_lan_ethernet2",
-            element: <ComunicacionLanEthernet/>
-        },
-        {
-            path: "comunicacion_lan_ethernet3",
-            element: <ComunicacionLanEthernet/>
-        },
+
     ]
 }
 

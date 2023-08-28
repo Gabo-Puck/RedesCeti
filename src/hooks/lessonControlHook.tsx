@@ -32,7 +32,7 @@ if (routerUnidad4.children)
 function useLessonControls(): NavigationHook {
     const location = useLocation();
     //save the current index
-    const [currentIndex, setCurrentIndex] = useState<number>(0);
+    const [currentIndex, setCurrentIndex] = useState<number>(NaN);
     //check if is the first lesson
     const [isFirst, setIsFirst] = useState<boolean>(false);
     //check if is the last lesson
@@ -48,6 +48,7 @@ function useLessonControls(): NavigationHook {
     }, [])
     //every change in currentIndex, navigate to the requested route
     useEffect(() => {
+        if (Number.isNaN(currentIndex)) return;
         navigate(routes[currentIndex]);
         //if currentIndex is 0 enable first flag
         if (currentIndex === 0) {
