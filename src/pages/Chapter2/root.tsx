@@ -1,11 +1,13 @@
 import { RouteObject } from "react-router-dom";
+import CapadeAplicacion from "./Tema2.1";
+
 
 const routerUnidad2: RouteObject = {
     path: "u2",
     children: [
         {
-            path: "txt2",
-            element: <>dummy text 2</>
+            path: "Tema",
+            element: <CapadeAplicacion/>,
         }
     ]
 }
