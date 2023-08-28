@@ -9,13 +9,19 @@ import "primeicons/primeicons.css";
 import "flowbite/dist/flowbite.css";
 
 import Index from "./Index.tsx";
+import Test from "./Test.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Index />,
   },
+  {
+    path: "/Test",
+    element: <Test />,
+  },
 ]);
+
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

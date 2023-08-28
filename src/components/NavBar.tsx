@@ -66,13 +66,18 @@ function NavBar() {
     },
     {
       label: "Funcionalidades de las capas del modelo OSI",
+    
       icon: "pi pi-server",
+     
       items: [
         {
           label: "2.1 Capa de aplicación",
           items: [
             {
               label: "2.1.1 Modelo cliente servidor",
+              command: () => {
+                navigate('/test')
+              },
             },
             {
               label: "2.1.2 Protocolos y servicios de la capa de aplicación",
