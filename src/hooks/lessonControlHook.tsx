@@ -28,6 +28,7 @@ if (routerUnidad3.children)
 if (routerUnidad4.children)
     routes = routes.concat(createRouteArray(routerUnidad4))
 
+
 //hook to manipulate the current lesson
 function useLessonControls(): NavigationHook {
     const location = useLocation();
@@ -41,11 +42,12 @@ function useLessonControls(): NavigationHook {
     //first render check if current route is defined in route array
     useEffect(() => {
         const currentPath = location.pathname;
+        console.log("current ", currentPath);
         let ci = routes.findIndex((path) => currentPath === path);
         //if is not, then set to first lesson
         if (ci === -1) ci = 0;
         setCurrentIndex(ci);
-    }, [])
+    }, [location])
     //every change in currentIndex, navigate to the requested route
     useEffect(() => {
         if (Number.isNaN(currentIndex)) return;
@@ -53,12 +55,14 @@ function useLessonControls(): NavigationHook {
         //if currentIndex is 0 enable first flag
         if (currentIndex === 0) {
             setIsFirst(true);
+            setIsLast(false);
             return;
         }
         setIsFirst(false);
         //if currentIndex is equal to last index enable last flag
         if (currentIndex === routes.length - 1) {
             setIsLast(true)
+            setIsFirst(false);
             return;
         }
         setIsLast(false);
