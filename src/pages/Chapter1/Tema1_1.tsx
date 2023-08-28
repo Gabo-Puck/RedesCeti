@@ -19,7 +19,7 @@ function ElementosDeComunicacionPage() {
   const navigate = useNavigate();
   return (
     <div>
-      <NavBar />
+
       <h1 style={{ fontWeight: "bold", textAlign: "center", fontSize: "20px" }}>
         Elementos de comunicacion y comunicacion de mensajes.
       </h1>
@@ -233,18 +233,6 @@ function ElementosDeComunicacionPage() {
           </ul>
         </div>
       </Panel>
-
-      <Button
-        style={{ alignItems: "center" }}
-        label="Siguiente Tema"
-        link
-        icon="pi pi-arrow-circle-right"
-        onClick={() => {
-          navigate("/Tema1.2");
-        }}
-      />
-
-      <FooterBar />
     </div>
   );
 }

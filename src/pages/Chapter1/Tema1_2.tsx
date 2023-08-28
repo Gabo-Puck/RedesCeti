@@ -5,9 +5,7 @@ import FooterBar from "../../components/FooterBar";
 function ComponentesRedPage() {
   return (
     <div>
-      <NavBar />
-
-      <FooterBar />
+      
     </div>
   );
 }
