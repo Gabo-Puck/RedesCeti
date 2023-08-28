@@ -7,6 +7,7 @@ import { Column } from 'primereact/column';
 import { useState } from "react";
 import { Button } from "primereact/button";
 import { TabView, TabPanel } from 'primereact/tabview';
+import { Image } from "primereact/image";
 
 const index = {
     intro:
@@ -22,48 +23,26 @@ const index = {
     comparacion:
         "Comparativa entre switches y hubs",
 }
-const categorias = [
+const diferencias = [
     {
-        categoria: '5e',
-        velocidad: "1Gbps",
-        distancia: '100 metros',
-        frecuencia: '100MHz',
-        uso: 'Oficinas y hogares para redes de tamaño mediano con necesidades estándar de ancho de banda',
+        switch: 'La trama se envía a un host en específico',
+        hub: "La trama se envía a todos los host",
     },
     {
-        categoria: '6',
-        velocidad: '1 Gbps a 10 Gbps',
-        distancia: '55 metros: 10Gbps | 100 metros: 1Gbps',
-        frecuencia: '250MHz',
-        uso: 'Aplicaciones de alta velocidad en entornos comerciales y residenciales, como transmisión de video y datos intensivos.',
+        switch: 'Genera menos tráfico en la red',
+        hub: 'Genera más tráfico en la red',
     },
     {
-        categoria: '6a',
-        velocidad: '10 Gbps a 100 Gbps',
-        distancia: 'Hasta 100 metros',
-        frecuencia: '500MHz',
-        uso: 'Redes empresariales y centros de datos que requieren alto rendimiento y ancho de banda',
+        switch: 'Uso de tablas de dirección MAC',
+        hub: 'No identifica a los puertos por dirección MAC',
     },
     {
-        categoria: '7',
-        velocidad: '10 Gbps a 100 Gbps',
-        distancia: 'Hasta 100 metros',
-        frecuencia: '600 MHz',
-        uso: 'Redes industriales y aplicaciones especializadas que demandan protección adicional contra interferencias',
+        switch: 'Genera más seguridad al segmentar o dirigir la trama',
+        hub: 'Genera inseguridad en la red',
     },
     {
-        categoria: '8',
-        velocidad: '25 Gbps a 40 Gbps.',
-        distancia: 'Hasta 30 metros',
-        frecuencia: ' 1GHz',
-        uso: 'Centros de datos y aplicaciones de alto rendimiento que necesitan velocidades excepcionales a distancias cortas.',
-    },
-    {
-        categoria: '8.1',
-        velocidad: '25 Gbps a 40 Gbps',
-        distancia: 'Hasta 30 metros',
-        frecuencia: '2GHz',
-        uso: 'Similar a Cat 8, diseñado para coexistir con cables de fibra en el mismo sistema.',
+        switch: 'Ofrecen más flexibilidad de configuraciones para diferentes casos',
+        hub: '',
     },
 ]
 export default function HubsSwitches() {
@@ -88,18 +67,14 @@ export default function HubsSwitches() {
         </article>
         <article className="mb-10">
             <Subtitle content={index["switches"]} />
-            <div className="card">
-                <div>
+            <div className="card flex flex-wrap">
+                <div className="grow-0">
                     <p className="text-gray-500 dark:text-gray-400">
                         Los switches son piezas de construcción clave para una red que operan en la capa 2. Permiten que varios dispositivos, tales como computadoras, access points, impresoras y servidores; se conecten entre sí. Es decir que un switch permite a los dispositivos conectados compartir información y comunicarse.
                     </p>
-                </div>
-                <div>
                     <p className="text-gray-500 dark:text-gray-400">
                         Dentro de los switches podemos clasificarlos de acuerdo al nivel de configuración que requieren:
                     </p>
-
-
                     <div className="card">
                         <TabView>
                             <TabPanel header="Administrados">
@@ -114,9 +89,11 @@ export default function HubsSwitches() {
                             </TabPanel>
                         </TabView>
                     </div>
-
-
-
+                </div>
+                <div className="grow">
+                    <div className="card flex justify-content-center">
+                        <Image src="https://primefaces.org/cdn/primereact/images/galleria/galleria7.jpg" alt="Image" width="200px" />
+                    </div>
                 </div>
 
             </div>
@@ -124,25 +101,66 @@ export default function HubsSwitches() {
         <article className="mb-10">
             <Subtitle content={index["funcSwitch"]} />
             <div className="card">
-
+                <TabView>
+                    <TabPanel header="Conmutación">
+                        <p className="text-gray-500 dark:text-gray-400 mb-5">
+                            Es la funcionalidad básica de un switch. Esta consiste en transferir datos entre los diferentes dispositivos de la red. Para esto se utilizan datos que están en la cabecera de la trama Ethernet
+                        </p>
+                        <p className="text-gray-500 dark:text-gray-400 mb-5">
+                            Ya se hablo anteriormente de que es ethernet y características generales. Ahora veremos como funciona la conmutación con ethernet.
+                        </p>
+                        <p className="text-gray-500 dark:text-gray-400 mb-5">
+                            Están diseñados para que uno pueda simplemente conectarlo y ya funcione (Como si fuera plug and play). Se usan para casos muy básicos como redes domésticas, laboratorios o salas de conferencias.
+                        </p>
+                        <p className="text-gray-500 dark:text-gray-400 mb-5">
+                            Ethernet es la tecnología que se encarga de interconectar a los dispositivos de manera cableada en la mayoría de topologías. En este proceso de transmisión los datos se dividen en tramas y cada trama contiene información de control denominada **cabecera**. Dicha cabecera contiene la dirección MAC del dispositivo emisor y el dispositivo receptor.
+                        </p>
+                        <p className="text-gray-500 dark:text-gray-400 mb-5">
+                            Ahora, dentro de los switches se guarda una tabla de direcciones MAC de todos los dispositivos conectados al switch y cada MAC tiene asociado el puerto al que esta conectado de manera física. De esta manera el switch sabe a que puerto tiene que redirigir la trama correspondiente.
+                        </p>
+                    </TabPanel>
+                    <TabPanel header="Buffer">
+                        <div className="flex flex-wrap md:flex-wrap-reverse">
+                            <div>
+                                <p className="text-gray-500 dark:text-gray-400">
+                                    Otra parte fundamental de los switches son los buffers. Estas son zonas de memoria donde se almacenan las tramas antes de ser reenviadas al puerto correspondiente. Esta característica además permite al switch gestionar de mejor manera los envíos de tramas cuando los puertos están congestionados.
+                                </p>
+                            </div>
+                            <div>
+                                <p>xd</p>
+                            </div>
+                        </div>
+                    </TabPanel>
+                </TabView>
             </div>
         </article>
         <article className="mb-10">
             <Subtitle content={index["hubs"]} />
             <div className="card">
 
+                <p className="text-gray-500 dark:text-gray-400">
+                    De forma similar a un switch, el hub conecta diferentes nodos o dispositivos de red. Operan en la capa 1 del modelo OSI. Su principal objetivo es reenviar inmediatamente los datos recibidos.
+                    A pesar de su alto uso uso en el pasado, actualmente se suele preferir un switch sobre el hub.
+                </p>
             </div>
         </article>
         <article className="mb-10">
             <Subtitle content={index["funcHubs"]} />
             <div className="card">
+                <p className="text-gray-500 dark:text-gray-400">
+                    Como ya se mencionó el hub es similar al switch en cuanto a propósito, sin embargo la forma en que lo hace es radicalmente diferente. El hub recibe los datos y los hace llegar a todos los dispositivos que tiene conectados en sus puertos.
+                    Esta transmisión es half duplex, esto quiere decir que transmite datos en ambas direcciones sin embargo no al mismo tiempo, por lo tanto sufre en velocidad. También cabe recalcar que como esta transmisión no excluye a ningún host, todos estos reciben los datos y constantemente están ocupados generando alto tráfico en la red.
+                </p>
 
             </div>
         </article>
         <article className="mb-10">
             <Subtitle content={index["comparacion"]} />
-            <div className="card">
-
+            <div className="flex">
+                <DataTable className="mx-auto" value={diferencias} tableStyle={{ maxWidth: '35rem' }} >
+                    <Column field="switch" header="Switch"></Column>
+                    <Column field="hub" header="Hub"></Column>
+                </DataTable>
             </div>
         </article>
 
