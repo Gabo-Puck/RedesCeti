@@ -118,7 +118,7 @@ function Tema1_2_1() {
           de canales.
         </p>
         <Image
-          src="https://www.informaticamoderna.com/Acces_point_archivos/seguridad.jpg"
+          src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Wlan_www.png"
           style={{ width: "100%", height: "auto" }}
           preview
         />
