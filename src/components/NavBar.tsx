@@ -14,7 +14,7 @@ function NavBar() {
         {
           label: "1.1 Elementos de comunicacion y comunicacion de mensajes",
           command: () => {
-            navigate("/Tema1.1");
+            navigate("/unidades/u1/Tema1_1");
           },
         },
         {
@@ -244,7 +244,7 @@ function NavBar() {
         {
           label: "4.1 Comunicación a través de la LAN con Ethernet",
           command: () => {
-            navigate("/unidades/u4/comunicacion-lan-ethernet");
+            navigate("/unidades/u4/Tema4_1");
           },
         },
         {
