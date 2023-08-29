@@ -78,24 +78,36 @@ function NavBar() {
       items: [
         {
           label: "2.1 Capa de aplicación",
+          command: () => {
+            navigate("/unidades/u2/CapadeAplicacion");
+          },
 
           items: [
             {
               label: "2.1.1 Modelo cliente servidor",
               command: () => {
-                navigate("/test");
+                navigate("/unidades/u2/ModeloClienteServidor");
               },
             },
             {
               label: "2.1.2 Protocolos y servicios de la capa de aplicación",
+              command: () => {
+                navigate("/unidades/u2/Protocolos");
+              },
             },
           ],
         },
         {
           label: "2.2 Capa de transporte.",
+          command: () => {
+            navigate("/unidades/u2/CapadeTransporte");
+          },
           items: [
             {
               label: "2.2.1 Protocolo TCP",
+              command: () => {
+                navigate("/unidades/u2/TCP");
+              },
             },
             {
               label: "2.2.2 Administración de sesiones TCP y protocolo UDP",
