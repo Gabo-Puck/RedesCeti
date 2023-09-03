@@ -4,6 +4,8 @@ import ModeloClienteServidor from "./Tema.2.1.1";
 import Protocolos from "./Tema.2.1.2";
 import CapadeTransporte from "./Tema2.2";
 import TCP from "./Tema2.2.1";
+import Administracion from "./Tema.2.2.2";
+import CapadeRed from "./Tema.2.3";
 
 
 const routerUnidad2: RouteObject = {
@@ -29,6 +31,16 @@ const routerUnidad2: RouteObject = {
             path: "TCP",
             element: <TCP/>,
         },
+        {
+            path: "Administracion",
+            element: <Administracion/>,
+        },
+        {
+            path: "CapadeRed",
+            element: <CapadeRed/>,
+        },
+
+
 
 
     ]

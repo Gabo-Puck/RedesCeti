@@ -111,11 +111,17 @@ function NavBar() {
             },
             {
               label: "2.2.2 Administración de sesiones TCP y protocolo UDP",
+              command: () => {
+                navigate("/unidades/u2/Administracion");
+              },
             },
           ],
         },
         {
           label: "2.3 Capa de Red",
+          command: () => {
+            navigate("/unidades/u2/CapadeRed");
+          },
           items: [
             {
               label: "2.3.1 Enrutamiento estático y dinámico",
