@@ -53,23 +53,33 @@ function NavBar() {
         },
         {
           label: "1.4 Modelo de un sistema de comunicaciones",
+          command: () => {
+            navigate("/unidades/u1/Tema1_4");
+          },
         },
         {
           label: "1.5 Direccionamiento de red",
+          command: () => {
+            navigate("/unidades/u1/Tema1_5");
+          },
         },
         {
           label: "1.6 Modelos de Referencia",
-          items: [
-            {
-              label: "1.6.1 Modelo TCP/IP",
-            },
-            {
-              label: "1.6.2 Modelo OSI ",
-            },
-            {
-              label: "1.6.3 Comparación entre Modelo TCP/IP y OSI ",
-            },
-          ],
+          command: () => {
+            navigate("/unidades/u1/Tema1_6");
+          },
+
+          // items: [
+          //   {
+          //     label: "1.6.1 Modelo TCP/IP",
+          //   },
+          //   {
+          //     label: "1.6.2 Modelo OSI ",
+          //   },
+          //   {
+          //     label: "1.6.3 Comparación entre Modelo TCP/IP y OSI ",
+          //   },
+          // ],
         },
       ],
     },
