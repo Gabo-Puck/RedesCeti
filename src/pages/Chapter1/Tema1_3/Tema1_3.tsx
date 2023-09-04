@@ -10,7 +10,7 @@ function Tema1_3() {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   return (
     <div>
-      <Title content="Topología de Redes " />
+      <Title content="1.3 Topología de Redes " />
       <ReactPlayer
         url={"https://www.youtube.com/embed/04jfARpozAc?si=syer1rOMMFnegM-E"}
         width="100%"

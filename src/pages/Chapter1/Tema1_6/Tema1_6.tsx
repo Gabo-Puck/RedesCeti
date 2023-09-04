@@ -8,7 +8,7 @@ import { Image } from "primereact/image";
 function Tema1_6() {
   return (
     <div>
-      <Title content="Modelos de Referencia" />
+      <Title content="1.6 Modelos de Referencia" />
       <Panel header="Modelo TCP/IP" toggleable>
         <p>
           El protocolo de Internet (IP) es el sistema de direcciones de Internet
