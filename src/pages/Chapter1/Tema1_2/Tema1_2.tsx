@@ -5,16 +5,15 @@ import Tema1_2_1 from "./Tema1_2_1";
 import Tema1_2_3 from "./Tema1_2_3";
 import Tema1_2_2 from "./Tema1_2_2";
 import ReactPlayer from "react-player";
-import ComponentesRedVideo from "../../../assets/videos/ComponentesDeRed.mp4";
+import Title from "../../../components/Lesson/Title";
 
 function ComponentesRedPage() {
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
   return (
     <div>
-      <h1 style={{ fontWeight: "bold", textAlign: "center", fontSize: "20px" }}>
-        Componentes en la red.
-      </h1>
+      <Title content="1.2 Componentes en la red." />
+
       <ReactPlayer
         url={"https://www.youtube.com/embed/gK9t3btbnyA?si=Ine97zEdBHxxdSsN"}
         width="100%"

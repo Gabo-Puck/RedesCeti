@@ -22,31 +22,34 @@ function NavBar() {
           command: () => {
             navigate("/unidades/u1/Tema1_2");
           },
-          items: [
-            {
-              label: "1.2.1 Dispositivos",
-            },
-            {
-              label: "1.2.2 Medios",
-            },
-            {
-              label: "1.2.3 Servicios",
-            },
-          ],
+          // items: [
+          //   {
+          //     label: "1.2.1 Dispositivos",
+          //   },
+          //   {
+          //     label: "1.2.2 Medios",
+          //   },
+          //   {
+          //     label: "1.2.3 Servicios",
+          //   },
+          // ],
         },
         {
           label: "1.3 Topología de redes",
-          items: [
-            {
-              label: "1.3.1 LAN",
-            },
-            {
-              label: "1.3.2 MAN",
-            },
-            {
-              label: "1.3.3 WAN",
-            },
-          ],
+          command: () => {
+            navigate("/unidades/u1/Tema1_3");
+          },
+          // items: [
+          //   {
+          //     label: "1.3.1 LAN",
+          //   },
+          //   {
+          //     label: "1.3.2 MAN",
+          //   },
+          //   {
+          //     label: "1.3.3 WAN",
+          //   },
+          // ],
         },
         {
           label: "1.4 Modelo de un sistema de comunicaciones",

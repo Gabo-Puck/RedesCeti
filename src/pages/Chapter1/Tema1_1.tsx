@@ -1,6 +1,4 @@
 import React from "react";
-import NavBar from "../../components/NavBar";
-import FooterBar from "../../components/FooterBar";
 import { Image } from "primereact/image";
 import { Panel } from "primereact/panel";
 
@@ -12,15 +10,13 @@ import EncapsulamientoMensaheImg from "../../assets/images/EncapsulamientoMensaj
 import OpcionesMensaje1 from "../../assets/images/OpcionesMensaje1.png";
 import OpcionesMensaje2 from "../../assets/images/OpcionesMensaje2.png";
 import OpcionesMensaje3 from "../../assets/images/OpcionesMensaje3.png";
-import { Button } from "primereact/button";
-import { useNavigate } from "react-router-dom";
+
 import Title from "../../components/Lesson/Title";
 
 function ElementosDeComunicacionPage() {
-  const navigate = useNavigate();
   return (
     <div>
-      <Title content="Elementos de comunicacion y comunicacion de mensajes." />
+      <Title content="1.1 Elementos de comunicacion y comunicacion de mensajes." />
 
       <Panel header="Aspectos Basicos de la comunicación." toggleable>
         <p className="m-0">
