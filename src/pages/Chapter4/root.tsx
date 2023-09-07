@@ -2,6 +2,7 @@ import { RouteObject } from "react-router-dom";
 import ComunicacionLanEthernet from "./ComunicacionLanEthernet";
 import ControlAccesoMedio from "./ControlAccesoMedio";
 import HubsSwitches from "./HubsSwitches";
+import ProtocoloResolucionDirecciones from "./ProtocoloResolucionDirecciones";
 
 const routerUnidad4: RouteObject = {
     path: "u4",
@@ -17,6 +18,10 @@ const routerUnidad4: RouteObject = {
         {
             path: "Tema4_3",
             element: <HubsSwitches/>
+        },
+        {
+            path: "Tema4_4",
+            element: <ProtocoloResolucionDirecciones/>
         },
 
     ]
