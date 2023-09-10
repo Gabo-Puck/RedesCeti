@@ -2,6 +2,7 @@ import FooterBar from "./components/FooterBar";
 import NavBar from "./components/NavBar";
 
 import { Divider } from 'primereact/divider';
+import Paragraph from "./components/Paragraph";
 
 
 function Index() {

@@ -1,9 +1,8 @@
 import { ReactNode } from "react"
 
-interface Props extends React.HTMLProps<HTMLAnchorElement>{
+interface Props extends React.HTMLProps<HTMLParagraphElement>{
     children?: ReactNode
     className?: string
-    props?: React.HTMLProps<HTMLAnchorElement>,
     // any props that come into the component
 }
 
