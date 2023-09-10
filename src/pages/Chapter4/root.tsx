@@ -4,6 +4,8 @@ import ControlAccesoMedio from "./ControlAccesoMedio";
 import HubsSwitches from "./HubsSwitches";
 import ProtocoloResolucionDirecciones from "./ProtocoloResolucionDirecciones";
 import RealizacionCapaFisica from "./RealizacionCapaFisica";
+import ConexionWanLan from "./ConexionWanLan";
+import EsquemaDireccionamiento from "./EsquemaDireccionamiento";
 
 const routerUnidad4: RouteObject = {
     path: "u4",
@@ -27,6 +29,14 @@ const routerUnidad4: RouteObject = {
         {
             path: "Tema4_5",
             element: <RealizacionCapaFisica />
+        },
+        {
+            path: "Tema4_6",
+            element: <ConexionWanLan />
+        },
+        {
+            path: "Tema4_7",
+            element: <EsquemaDireccionamiento />
         },
 
     ]
