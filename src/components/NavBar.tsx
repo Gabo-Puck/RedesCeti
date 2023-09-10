@@ -282,26 +282,44 @@ function NavBar() {
         },
         {
           label: "4.2 Control de acceso al medio",
+          command: () => {
+            navigate("/unidades/u4/Tema4_2");
+          },
         },
         {
           label: "4.3 Hubs y switches",
+          command: () => {
+            navigate("/unidades/u4/Tema4_3");
+          },
         },
         {
           label: "4.4 Protocolo de resolución de direcciones",
+          command: () => {
+            navigate("/unidades/u4/Tema4_4");
+          },
         },
         {
           label: "4.5 Realización de una red física",
+          command: () => {
+            navigate("/unidades/u4/Tema4_5");
+          },
         },
         {
           label: "4.6 Interconexión entre dispositivos",
           items: [
             {
               label: "4.6.1 Conexión de LAN y WAN",
+              command: () => {
+                navigate("/unidades/u4/Tema4_6");
+              },
             },
           ],
         },
         {
           label: "4.7 Esquema de direccionamiento",
+          command: () => {
+            navigate("/unidades/u4/Tema4_7");
+          },
         },
       ],
     },
