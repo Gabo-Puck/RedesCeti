@@ -1,4 +1,4 @@
-interface Title {
+interface Title extends React.HTMLProps<HTMLHeadingElement> {
   content: string;
   props?: React.HTMLProps<HTMLHeadingElement>;
 }

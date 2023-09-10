@@ -7,6 +7,7 @@ import { Column } from 'primereact/column';
 import { useState } from "react";
 import { Button } from "primereact/button";
 import { TabView, TabPanel } from 'primereact/tabview';
+import Paragraph from "../../components/Paragraph";
 
 const index = {
     intro:
@@ -79,7 +80,7 @@ export default function ControlAccesoMedio() {
         </Card>
         <article className="mb-10">
             <Subtitle content={index["intro"]} />
-            <p className="text-gray-500 dark:text-gray-400">Dispositivos como los switches y los hubs son fundamentales para establecer y gestionar una conectividad eficiente y confiable. Estos componentes, aunque a menudo pasan desapercibidos, desempeñan un papel esencial en la estructura y el funcionamiento de las redes modernas. Es por eso</p>
+            <Paragraph className="text-gray-500 dark:text-gray-400">Dispositivos como los switches y los hubs son fundamentales para establecer y gestionar una conectividad eficiente y confiable. Estos componentes, aunque a menudo pasan desapercibidos, desempeñan un papel esencial en la estructura y el funcionamiento de las redes modernas. Es por eso</Paragraph>
         </article>
         <article className="mb-10">
             <Subtitle content={index["switches"]} />
@@ -97,38 +98,38 @@ export default function ControlAccesoMedio() {
                                 <h3>
                                     Protocolo CSMA/CD (Carrier Sense Multiple Access with Collision Detection).
                                 </h3>
-                                <p>
+                                <Paragraph>
                                     También conocido como Acceso Múltiple por Detección de Portadora con Detección de Colisiones.
                                     Es una técnica usada en redes para mejorar la entrega de paquetes. Para entender que problema resuelve este protocolo hay que entender sus partes:
-                                </p>
+                                </Paragraph>
                                 <ul className="px-5 list-disc">
-                                    <li><p className="text-gray-500 dark:text-gray-400">Carrier Sense (Detección de Portadora): Los dispositivos antes de transmitir, escuchan si hay actividad en la red para asegurarse de que el medio de transmisión esté libre.</p></li>
-                                    <li><p className="text-gray-500 dark:text-gray-400">Multiple Access (Acceso Múltiple): Múltiples dispositivos comparten el mismo medio de transmisión, como un cable, para transmitir y recibir datos.</p></li>
-                                    <li><p className="text-gray-500 dark:text-gray-400">Collision Detection (Detección de Colisión): Si dos dispositivos intentan transmitir al mismo tiempo, se produce una colisión de datos. La detección de colisión es la capacidad de un dispositivo para identificar si una colisión ha ocurrido.</p></li>
+                                    <li><Paragraph className="text-gray-500 dark:text-gray-400">Carrier Sense (Detección de Portadora): Los dispositivos antes de transmitir, escuchan si hay actividad en la red para asegurarse de que el medio de transmisión esté libre.</Paragraph></li>
+                                    <li><Paragraph className="text-gray-500 dark:text-gray-400">Multiple Access (Acceso Múltiple): Múltiples dispositivos comparten el mismo medio de transmisión, como un cable, para transmitir y recibir datos.</Paragraph></li>
+                                    <li><Paragraph className="text-gray-500 dark:text-gray-400">Collision Detection (Detección de Colisión): Si dos dispositivos intentan transmitir al mismo tiempo, se produce una colisión de datos. La detección de colisión es la capacidad de un dispositivo para identificar si una colisión ha ocurrido.</Paragraph></li>
                                 </ul>
                             </div>
 
-                            <p className="text-gray-500 dark:text-gray-400">
+                            <Paragraph className="text-gray-500 dark:text-gray-400">
                                 Ahora, el protocolo CSMA/CD resuelve el problema de colisiones en redes Ethernet siguiendo estos pasos:
-                            </p>
+                            </Paragraph>
 
                             <ol className="px-5 list-decimal">
-                                <li><p className="text-gray-500 dark:text-gray-400">Carrier Sense (Detección de Portadora): Antes de transmitir, un dispositivo escucha si hay actividad en la red. Si el medio está ocupado, el dispositivo espera hasta que esté libre.</p></li>
-                                <li><p className="text-gray-500 dark:text-gray-400">Transmisión: Si el medio está libre, el dispositivo comienza a transmitir sus datos.</p></li>
-                                <li><p className="text-gray-500 dark:text-gray-400">Collision Detection (Detección de Colisión): Mientras el dispositivo transmite, escucha si alguien más está transmitiendo al mismo tiempo. Si detecta una colisión (dos señales transmitidas simultáneamente, lo que resulta en una mezcla de señales), el dispositivo interrumpe su transmisión.</p></li>
-                                <li><p className="text-gray-500 dark:text-gray-400">Algoritmo de Espera Exponencial: Después de una colisión, los dispositivos detienen la transmisión y esperan un período de tiempo aleatorio antes de intentar transmitir nuevamente. Este tiempo de espera aleatorio reduce las posibilidades de que los dispositivos vuelvan a colisionar inmediatamente.</p></li>
-                                <li><p className="text-gray-500 dark:text-gray-400">Reintentos: Después del período de espera, los dispositivos intentan transmitir nuevamente. Si detectan que el medio está libre, comienzan la transmisión. Si vuelven a detectar una colisión, repiten el proceso de espera y reintentos.</p></li>
+                                <li><Paragraph className="text-gray-500 dark:text-gray-400">Carrier Sense (Detección de Portadora): Antes de transmitir, un dispositivo escucha si hay actividad en la red. Si el medio está ocupado, el dispositivo espera hasta que esté libre.</Paragraph></li>
+                                <li><Paragraph className="text-gray-500 dark:text-gray-400">Transmisión: Si el medio está libre, el dispositivo comienza a transmitir sus datos.</Paragraph></li>
+                                <li><Paragraph className="text-gray-500 dark:text-gray-400">Collision Detection (Detección de Colisión): Mientras el dispositivo transmite, escucha si alguien más está transmitiendo al mismo tiempo. Si detecta una colisión (dos señales transmitidas simultáneamente, lo que resulta en una mezcla de señales), el dispositivo interrumpe su transmisión.</Paragraph></li>
+                                <li><Paragraph className="text-gray-500 dark:text-gray-400">Algoritmo de Espera Exponencial: Después de una colisión, los dispositivos detienen la transmisión y esperan un período de tiempo aleatorio antes de intentar transmitir nuevamente. Este tiempo de espera aleatorio reduce las posibilidades de que los dispositivos vuelvan a colisionar inmediatamente.</Paragraph></li>
+                                <li><Paragraph className="text-gray-500 dark:text-gray-400">Reintentos: Después del período de espera, los dispositivos intentan transmitir nuevamente. Si detectan que el medio está libre, comienzan la transmisión. Si vuelven a detectar una colisión, repiten el proceso de espera y reintentos.</Paragraph></li>
                             </ol>
 
                         </article>
                     </TabPanel>
                     <TabPanel header="Hub">
-                        <p className="m-0">
+                        <Paragraph className="m-0">
                             Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
                             eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo
                             enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui
                             ratione voluptatem sequi nesciunt. Consectetur, adipisci velit, sed quia non numquam eius modi.
-                        </p>
+                        </Paragraph>
                     </TabPanel>
                 </TabView>
             </div>
@@ -141,25 +142,25 @@ export default function ControlAccesoMedio() {
                 <h3>
                     ACLs (Listas de Control de Acceso)
                 </h3>
-                <p className="text-gray-500 dark:text-gray-400">
+                <Paragraph className="text-gray-500 dark:text-gray-400">
                     Las ACLs, o Listas de Control de Acceso, son herramientas de seguridad utilizadas en redes para controlar y filtrar el tráfico que ingresa o sale de una red. Permiten definir reglas que especifican qué tipos de tráfico están permitidos y cuáles están bloqueados. Las ACLs pueden basarse en direcciones IP, puertos, protocolos y otros atributos. Se aplican en enrutadores y dispositivos de seguridad para restringir el acceso no autorizado y garantizar una mejor gestión del tráfico en la red.
-                </p>
+                </Paragraph>
             </div>
             <div className="mb-5">
                 <h3>
                     Autenticación
                 </h3>
-                <p className="text-gray-500 dark:text-gray-400">
+                <Paragraph className="text-gray-500 dark:text-gray-400">
                     La autenticación es el proceso de verificar la identidad de un usuario, dispositivo o sistema antes de permitirles el acceso a una red o servicio. Se basa en credenciales únicas, como nombres de usuario y contraseñas, certificados digitales o biometría. La autenticación es esencial para prevenir el acceso no autorizado y asegurar que solo las personas o dispositivos adecuados puedan acceder a recursos sensibles.
-                </p>
+                </Paragraph>
             </div>
             <div className="mb-5">
                 <h3>
                     Encriptación
                 </h3>
-                <p className="text-gray-500 dark:text-gray-400">
+                <Paragraph className="text-gray-500 dark:text-gray-400">
                     La encriptación es la técnica de codificar información para que solo las personas o sistemas autorizados puedan entenderla. Se utiliza para proteger la confidencialidad y la integridad de los datos mientras se transmiten por una red. Por lo general, la información es "traducida" como se menciono anteriormente por medio de un método de cifrado, donde las personas las cuales tienen acceso a ella requieren de una llave para poder trabajar con ella.
-                </p>
+                </Paragraph>
             </div>
         </article>
 
