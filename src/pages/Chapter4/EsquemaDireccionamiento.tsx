@@ -13,37 +13,94 @@ import GridItem from "../../components/GridItem";
 import GridItemCenter from "../../components/GridItemCenter";
 import Paragraph from "../../components/Paragraph";
 import Consolecode from "../../components/ConsoleCode";
+import { Link } from "react-router-dom";
 
 const index = {
-    intro:
-        "Introducción al Protocolo de Resolución de Direcciones",
-    tipos:
-        "Tipos de Resolución de Direcciones",
-    func:
-        "Funcionamiento del protocolo ARP",
+    subredes:
+        "Subredes y máscaras de subred",
     tablas:
-        "Tablas ARP",
+        "Tablas de enrutamiento",
+    dhcp:
+        "Direccionamiento DHCP",
+    nat:
+        "NAT",
 }
-const diferencias = [
+const tabla = [
     {
-        switch: 'La trama se envía a un host en específico',
-        hub: "La trama se envía a todos los host",
+        componente: "Red de destino",
+        contenido:
+            <>
+                <Paragraph>Esto corresponde a la red de destino donde deberá ir el paquete de datos.</Paragraph>
+            </>
     },
     {
-        switch: 'Genera menos tráfico en la red',
-        hub: 'Genera más tráfico en la red',
+        componente: "Mascara de subred",
+        contenido:
+            <>
+                <Paragraph>Es la que se utiliza para definir la máscara de subred de la red a la que debemos ir.</Paragraph>
+            </>
     },
     {
-        switch: 'Uso de tablas de dirección MAC',
-        hub: 'No identifica a los puertos por dirección MAC',
+        componente: "Siguiente salto",
+        contenido:
+            <>
+                <Paragraph>
+                    En inglés a esto se lo conoce como next hop. Es la dirección de IP de la interfaz de red por donde viajará el paquete de datos, para seguir con su camino hasta el final.
+                </Paragraph>
+            </>
     },
     {
-        switch: 'Genera más seguridad al segmentar o dirigir la trama',
-        hub: 'Genera inseguridad en la red',
+        componente: "Interfaz de salida",
+        contenido:
+            <>
+                <Paragraph>
+                    Es la interfaz de red por donde deben salir los paquetes, para posteriormente llegar finalmente al destino.
+                </Paragraph>
+            </>
     },
     {
-        switch: 'Ofrecen más flexibilidad de configuraciones para diferentes casos',
-        hub: '',
+        componente: "Métricas",
+        contenido:
+            <>
+                <Paragraph>
+                    Tienen varias aplicaciones. Una de ellas consiste en indicar el número mínimo de saltos hasta la red de destino, o simplemente el «coste» para llegar hasta la red de destino, y sirve para dar prioridad.
+                </Paragraph>
+            </>
+    },
+]
+const tabla2 = [
+    {
+        componente: "Estática",
+        contenido:
+            <>
+                <Paragraph>Es una técnica de traducción de direcciones de red que asigna una dirección IP pública fija a un dispositivo específico en la red privada. Cada vez que ese dispositivo se comunica con Internet, siempre utiliza la misma dirección IP pública.</Paragraph>
+            </>,
+        uso: <>
+            <Paragraph>Se utiliza cuando se necesita permitir que un servidor interno, como un servidor web o de correo electrónico, sea accesible desde Internet utilizando una dirección IP pública fija. Es comúnmente utilizado para alojar servicios en servidores internos.</Paragraph>
+        </>
+    },
+    {
+        componente: "Dinámica",
+        contenido:
+            <>
+                <Paragraph>Asigna direcciones IP públicas de un grupo de direcciones disponibles a dispositivos internos de forma dinámica cuando se inicia una conexión. Cada dispositivo interno obtiene una dirección IP pública diferente de la reserva, pero solo mientras esté activa la conexión.</Paragraph>
+            </>, uso: <>
+                <Paragraph>
+                    Es útil cuando se tiene un conjunto limitado de direcciones IP públicas, pero se desea permitir que múltiples dispositivos internos accedan a Internet al mismo tiempo. Las direcciones IP públicas se liberan una vez que la conexión se cierra, lo que permite su reutilización.
+                </Paragraph></>
+    },
+    {
+        componente: "PAT o NAT Overload",
+        contenido:
+            <>
+                <Paragraph>
+                    Es una técnica de traducción de direcciones de red que permite que múltiples dispositivos internos compartan una única dirección IP pública. La diferencia principal es que PAT utiliza números de puerto únicos para distinguir entre las conexiones de dispositivos internos.
+                </Paragraph>
+            </>,
+        uso: <>
+            <Paragraph>
+                Se utiliza en situaciones donde se desea que varios dispositivos internos compartan una sola dirección IP pública. Cada conexión interna se diferencia por su número de puerto único, lo que permite que los paquetes de datos se enrutin a los dispositivos internos correctos en función de esos números de puerto.
+            </Paragraph></>
     },
 ]
 export default function EsquemaDireccionamiento() {
@@ -52,102 +109,90 @@ export default function EsquemaDireccionamiento() {
         <Title content="4.7 Esquema de direccionamiento" />
         <Card title="Contenido" className="mb-10">
             <ul className="px-5 list-disc">
-                <li><IndexAnchor content={index["intro"]} /></li>
-                {/* <li><IndexAnchor content={index["tipos"]} /></li> */}
-                <li><IndexAnchor content={index["func"]} /></li>
+                <li><IndexAnchor content={index["subredes"]} /></li>
                 <li><IndexAnchor content={index["tablas"]} /></li>
+                <li><IndexAnchor content={index["dhcp"]} /></li>
+                <li><IndexAnchor content={index["nat"]} /></li>
             </ul>
         </Card>
         <article className="mb-10">
-            <div className="card flex flex-wrap">
+            <div className="flex flex-wrap">
                 <GridTwo align="items-center">
                     <GridItem>
-                        <Subtitle content={index["intro"]} />
+                        <Subtitle content={index["subredes"]} />
                         <div>
                             <Paragraph className="text-gray-500 dark:text-gray-400">
-                                Los protocolos se pueden definir como un conjunto de nomras y convenciones que rigen la forma en que los dispositivos de una red intercambian información.
-                                En la capa de internet del modelo TCP/IP existen diversos protocolos, dentro de los que se encuentra ICMP, ARP y RARP etc.
+                                La dirección IP es la dirección que te asigna tu ISP, empresas que dan acceso a Internet. Sin embargo, la IP no es suficiente para identificarte en la red. Es necesario otro componente, llamado submáscara de red ya explicado anteriormente en {" "}<Link to="../../u1/Tema1_5">Direccionamiento de red</Link>{" "}
+                            </Paragraph>
+                            <Paragraph className="text-gray-500 dark:text-gray-400">
+                                Como se mencionó en ese tema, ese componente permite ayudar a distinguir las direcciones IP que son muy parecidas. Si tienes varios dispositivos con una IP en la que lo único que cambia es el último número, la máscara servirá para saber cuáles son los números que varían dentro de las IPs de la red.
                             </Paragraph>
                             <Paragraph>
-                                Estos permiten la comunicación de los equipos y son escenciales dentro de la red. Uno de los más importantes es ARP pues determina la dirección de la capa de enlace de datos, la dirección MAC, para las direcciones IP conocidas
+                                Lo que hace la máscara de subred es identificar la parte fija de una ip (asignando el valor 255 a la parte que no varía). Esta parte que no varía, representan la dirección de red mientras que la parte que varía permite identificar al dispositivo dentro de esa red
                             </Paragraph>
-
-
-                            {/* <div className="card">
-                                <TabView>
-                                    <TabPanel header="Administrados">
-                                        <Paragraph className="text-gray-500 dark:text-gray-400">
-                                            Están diseñados para que uno pueda simplemente conectarlo y ya funcione (Como si fuera plug and play). Se usan para casos muy básicos como redes domésticas, laboratorios o salas de conferencias.
-                                        </Paragraph>
-                                    </TabPanel>
-                                    <TabPanel header="No administrados">
-                                        <Paragraph className="text-gray-500 dark:text-gray-400">
-                                            Están diseñados para ser más seguros, flexibles y con más funciones. Requieren una configuración personalizada, por lo tanto sus casos de uso son más extensos dependiendo de las necesidades de quien lo configure.
-                                        </Paragraph>
-                                    </TabPanel>
-                                </TabView>
-                            </div> */}
+                            <Paragraph>
+                                Esta submascara, tiene varios beneficios uno de ellos permite hacer un uso más eficiente de las direcciones IP a través de algo llamado <b>subredes</b>
+                            </Paragraph>
+                            <Paragraph>
+                                Estas subredes permiten ser administradas como pequeñas partes de una red, que pueden estar inclusive dispuestas en diferentes zonas geográficas.
+                            </Paragraph>
                         </div>
                     </GridItem>
                     <GridItemCenter>
-                        <Image src="https://kinsta.com/wp-content/uploads/2023/02/DNS-links-domain.png" alt="switch" />
+                        <Image src="https://jomahd.files.wordpress.com/2017/12/b.png" alt="switch" />
                     </GridItemCenter>
                 </GridTwo>
             </div>
         </article>
-        {/* <article className="mb-10">
-            <div>
-                <div>
-                    <Subtitle content={index["tipos"]} />
-                    <div className="card">
-                        <TabView>
-                            <TabPanel header="Conmutación">
-                                <Paragraph className="text-gray-500 dark:text-gray-400 mb-5">
-                                    Es la funcionalidad básica de un switch. Esta consiste en transferir datos entre los diferentes dispositivos de la red. Para esto se utilizan datos que están en la cabecera de la trama Ethernet
-                                </Paragraph>
-                                <Paragraph className="text-gray-500 dark:text-gray-400 mb-5">
-                                    Ya se hablo anteriormente de que es ethernet y características generales. Ahora veremos como funciona la conmutación con ethernet.
-                                </Paragraph>
-                                <Paragraph className="text-gray-500 dark:text-gray-400 mb-5">
-                                    Están diseñados para que uno pueda simplemente conectarlo y ya funcione (Como si fuera plug and play). Se usan para casos muy básicos como redes domésticas, laboratorios o salas de conferencias.
-                                </Paragraph>
-                                <Paragraph className="text-gray-500 dark:text-gray-400 mb-5">
-                                    Ethernet es la tecnología que se encarga de interconectar a los dispositivos de manera cableada en la mayoría de topologías. En este proceso de transmisión los datos se dividen en tramas y cada trama contiene información de control denominada **cabecera**. Dicha cabecera contiene la dirección MAC del dispositivo emisor y el dispositivo receptor.
-                                </Paragraph>
-                                <Paragraph className="text-gray-500 dark:text-gray-400 mb-5">
-                                    Ahora, dentro de los switches se guarda una tabla de direcciones MAC de todos los dispositivos conectados al switch y cada MAC tiene asociado el puerto al que esta conectado de manera física. De esta manera el switch sabe a que puerto tiene que redirigir la trama correspondiente.
-                                </Paragraph>
-                            </TabPanel>
-                            <TabPanel header="Buffer">
-                                <div className="flex flex-wrap md:flex-wrap-reverse">
-                                    <div>
-                                        <Paragraph className="text-gray-500 dark:text-gray-400">
-                                            Otra parte fundamental de los switches son los buffers. Estas son zonas de memoria donde se almacenan las tramas antes de ser reenviadas al puerto correspondiente. Esta característica además permite al switch gestionar de mejor manera los envíos de tramas cuando los puertos están congestionados.
-                                        </Paragraph>
-                                    </div>
-                                </div>
-                            </TabPanel>
-                        </TabView>
-                    </div>
-                </div>
-
-            </div>
-        </article> */}
         <article className="mb-10">
+            <Subtitle content={index["dhcp"]} />
             <GridTwo align="items-start">
                 <GridItem>
-                    <Subtitle content={index["func"]} />
-                    <div className="card" >
-                        <Paragraph className="">
-                            Primeramente tenemos que entender que ARP convierte dinámicamente las direcciones de Internet en las direcciones de hardware exclusivas de las redes de área local. Este es su objetivo principal
-                        </Paragraph>
-                        <Paragraph className="">
-                            Para ilustrar cómo funciona ARP, imaginemos dos nodos, X y Y. Si el nodo X desea comunicarse con Y y X e Y están en redes de área local (LAN) diferentes, X e Y se comunican a través de puentes, direccionadores o pasarelas, utilizando direcciones IP.
-                            En una LAN, los nodos se comunican utilizando direcciones de hardware de bajo nivel. Aquí es donde entra ARP.
-                            Los nodos del mismo segmento de la misma LAN utilizan ARP para determinar la dirección de hardware de otros nodos.
-                        </Paragraph>
-                        <Subtitle content={"La magia de arp"} />
-                        <GridTwo align="items-start" style={{
+                    <Paragraph>
+                        En el pasado, era muy común asignar direcciones de manera manual a cada equipo. Hoy en día se cuentan con servicios que permiten asignar direcciones ip de manera automática simplificando el trabajo de un administrador de red. Este servicio es llamado DHCP
+                    </Paragraph>
+                    <Paragraph>
+                        La asignación de direcciones con DHCP se basa en un modelo cliente-servidor: el terminal que quiere conectarse solicita la configuración IP a un servidor DHCP que, por su parte, recurre a una base de datos que contiene los parámetros de red asignables. Este servidor, componente de cualquier router moderno, puede asignar los siguientes parámetros al cliente con ayuda de la información de su base de datos:
+                        <ul className="px-5 list-disc">
+                            <li>
+                                Dirección IP única
+                            </li>
+                            <li>
+                                Máscara de subred
+                            </li>
+                            <li>
+                                Puerta de enlace estándar
+                            </li>
+                            <li>
+                                Servidores DNS
+                            </li>
+                            <li>
+                                Configuración proxy por WPAD (Web Proxy Auto-Discovery Protocol)
+                            </li>
+                        </ul>
+                        Como se puede apreciar, provee la configuración necesaria para la navegación de una red
+                    </Paragraph>
+                </GridItem>
+                <GridItemCenter>
+                    <Image src="https://www.manageengine.com/products/oputils/images/dhcp-process.jpg" />
+                </GridItemCenter>
+            </GridTwo>
+        </article>
+        <article className="mb-10">
+            <Subtitle content={index["tablas"]} />
+            <div className="" >
+                <Paragraph className="">
+                    En el tema anterior, también se abarco el uso de la tabla de enrutamiento para interconectar redes LAN.
+                </Paragraph>
+                <Paragraph className="">
+                    Este componente es fundamental para el direcciomiento de redes por lo que es importante conocer sus componentes.
+                </Paragraph>
+                <DataTable value={tabla} tableStyle={{ minWidth: '60rem' }}>
+                    <Column field="componente" header="Componente"></Column>
+                    <Column field="contenido" header="Definicion"></Column>
+                </DataTable>
+                {/* <Subtitle content={"La magia de arp"} /> */}
+                {/* <GridTwo align="items-start" style={{
                             justifyItems: "start"
                         }}>
                             <GridItem className="self-start">
@@ -163,29 +208,32 @@ export default function EsquemaDireccionamiento() {
                                     De esta forma, es mucho más eficiente el proceso de transmisión de mensajes, pues tenemos canal "directo" entre los equipos, lo que genera menos tráfico de red y hace mejor uso de los recursos disponibles
                                 </Paragraph>
                             </GridItem>
-                        </GridTwo>
-                    </div>
-                </GridItem>
-                <GridItemCenter>
-                    <Image src="https://www.checkpoint.com/wp-content/uploads/icon-arp.jpg" alt="Imagen hub" />
-                </GridItemCenter>
-            </GridTwo>
+                        </GridTwo> */}
+            </div>
+
+
+
         </article>
         <article className="mb-10">
-            <Subtitle content={index["tablas"]} />
+            <Subtitle content={index["nat"]} />
             <Paragraph>
-                La parte más importante del protoclo ARP son sus tablas de direccionamiento. Como ya se mencionó previamente, estas guardan en cada fila la dirección IP y su dirección MAC asociada.
-                Lo podemos entender como un diccionario o un directorio de ip y mac.
+                NAT, por sus siglas en inglés es Network Address Translator, que es en escencia un traductor de direcciones IP. Es importante no confundir este concepto
+                con DNS, pues DNS traduce direcciones IP a nombres de dominio, mientras que NAT traduce una IP a otra IP
             </Paragraph>
             <Paragraph>
-                Dependiendo del sistema operativo, se pueden revisar el cache generado por la tabla ARP. En windows de usa el comando:
+                Cumple una función primordial en las conexiones de red pues hace que sean posibles en primer lugar. Lo que hace es asignar a una red una direccion IP pública,
+                y todo el tráfico dirigido a esa IP, es traducido y redireccionado a la IP correspondiente.
             </Paragraph>
-            <Consolecode code="arp -a" />
             <Paragraph>
-                Este comando nos mostraría una salida similar a esta:
+                En resumen, el NAT ayuda a controlar que las direcciones IPv4 se agoten, administrando direcciones IPv4 locales o privadas de todos los equipos conectados a la red. Entonces, si hay tres ordenadores, dos móviles, una impresora y cualquier otro equipo, cada uno tiene una dirección IP privada, lo que haría un total de siete direcciones. NAT los trata individualmente dentro de la red, pero para Internet, es solo una dirección IP, como si fuera un dispositivo único.
             </Paragraph>
+            <DataTable value={tabla2} tableStyle={{ minWidth: '60rem' }}>
+                <Column field="componente" header="Componente"></Column>
+                <Column field="contenido" header="Definicion"></Column>
+                <Column field="uso" header="Uso"></Column>
+            </DataTable>
             <div className="flex justify-center">
-                <Image src="https://www.meridianoutpost.com/resources/articles/command-line/images/arp-s.png" />
+                <Image src="https://www.9tut.com/images/ccna_self_study/NAT/PAT_Basic.jpg" />
             </div>
         </article>
 
