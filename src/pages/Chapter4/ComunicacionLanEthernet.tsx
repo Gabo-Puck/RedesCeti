@@ -119,36 +119,7 @@ export default function ComunicacionLanEthernet() {
             </div>
 
         </article>
-        <article className="mb-10">
-            <Subtitle content={index["protocolos"]} />
-            <div className="mb-5">
-                <h3>
-                    Protocolo CSMA/CD (Carrier Sense Multiple Access with Collision Detection).
-                </h3>
-                <Paragraph>
-                    También conocido como Acceso Múltiple por Detección de Portadora con Detección de Colisiones.
-                    Es una técnica usada en redes para mejorar la entrega de paquetes. Para entender que problema resuelve este protocolo hay que entender sus partes:
-                </Paragraph>
-                <ul className="px-5 list-disc">
-                    <li><Paragraph className="text-gray-500 dark:text-gray-400">Carrier Sense (Detección de Portadora): Los dispositivos antes de transmitir, escuchan si hay actividad en la red para asegurarse de que el medio de transmisión esté libre.</Paragraph></li>
-                    <li><Paragraph className="text-gray-500 dark:text-gray-400">Multiple Access (Acceso Múltiple): Múltiples dispositivos comparten el mismo medio de transmisión, como un cable, para transmitir y recibir datos.</Paragraph></li>
-                    <li><Paragraph className="text-gray-500 dark:text-gray-400">Collision Detection (Detección de Colisión): Si dos dispositivos intentan transmitir al mismo tiempo, se produce una colisión de datos. La detección de colisión es la capacidad de un dispositivo para identificar si una colisión ha ocurrido.</Paragraph></li>
-                </ul>
-            </div>
-
-            <Paragraph className="text-gray-500 dark:text-gray-400">
-                Ahora, el protocolo CSMA/CD resuelve el problema de colisiones en redes Ethernet siguiendo estos pasos:
-            </Paragraph>
-
-            <ol className="px-5 list-decimal">
-                <li><Paragraph className="text-gray-500 dark:text-gray-400">Carrier Sense (Detección de Portadora): Antes de transmitir, un dispositivo escucha si hay actividad en la red. Si el medio está ocupado, el dispositivo espera hasta que esté libre.</Paragraph></li>
-                <li><Paragraph className="text-gray-500 dark:text-gray-400">Transmisión: Si el medio está libre, el dispositivo comienza a transmitir sus datos.</Paragraph></li>
-                <li><Paragraph className="text-gray-500 dark:text-gray-400">Collision Detection (Detección de Colisión): Mientras el dispositivo transmite, escucha si alguien más está transmitiendo al mismo tiempo. Si detecta una colisión (dos señales transmitidas simultáneamente, lo que resulta en una mezcla de señales), el dispositivo interrumpe su transmisión.</Paragraph></li>
-                <li><Paragraph className="text-gray-500 dark:text-gray-400">Algoritmo de Espera Exponencial: Después de una colisión, los dispositivos detienen la transmisión y esperan un período de tiempo aleatorio antes de intentar transmitir nuevamente. Este tiempo de espera aleatorio reduce las posibilidades de que los dispositivos vuelvan a colisionar inmediatamente.</Paragraph></li>
-                <li><Paragraph className="text-gray-500 dark:text-gray-400">Reintentos: Después del período de espera, los dispositivos intentan transmitir nuevamente. Si detectan que el medio está libre, comienzan la transmisión. Si vuelven a detectar una colisión, repiten el proceso de espera y reintentos.</Paragraph></li>
-            </ol>
-
-        </article>
+        
         <article className="mb-10">
             <Subtitle content={index["seguridad"]} />
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
