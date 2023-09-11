@@ -1,7 +1,15 @@
 interface SubtitleProps {
-    content: string
-    props?: React.HTMLProps<HTMLHeadingElement>
+  content: string;
+  props?: React.HTMLProps<HTMLHeadingElement>;
 }
 export default function Subtitle({ content, ...props }: SubtitleProps) {
-    return <h2 id={content} className="text-4xl font-bold dark:text-white" {...props}>{content}</h2>
+  return (
+    <h2
+      id={content}
+      style={{ fontWeight: "bold", textAlign: "left", fontSize: "20px" }}
+      {...props}
+    >
+      {content}
+    </h2>
+  );
 }

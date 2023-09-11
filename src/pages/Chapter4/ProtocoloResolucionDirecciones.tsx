@@ -12,20 +12,17 @@ import GridTwo from "../../components/Grid";
 import GridItem from "../../components/GridItem";
 import GridItemCenter from "../../components/GridItemCenter";
 import Paragraph from "../../components/Paragraph";
+import Consolecode from "../../components/ConsoleCode";
 
 const index = {
     intro:
-        "Introducción a Switches y Hubs",
-    switches:
-        "Switches",
-    funcSwitch:
-        "¿Cómo funcionan los switches?",
-    hubs:
-        "Hubs",
-    funcHubs:
-        "¿Cómo funcionan los hubs?",
-    comparacion:
-        "Comparativa entre switches y hubs",
+        "Introducción al Protocolo de Resolución de Direcciones",
+    tipos:
+        "Tipos de Resolución de Direcciones",
+    func:
+        "Funcionamiento del protocolo ARP",
+    tablas:
+        "Tablas ARP",
 }
 const diferencias = [
     {
@@ -49,39 +46,34 @@ const diferencias = [
         hub: '',
     },
 ]
-export default function HubsSwitches() {
+export default function ProtocoloResolucionDirecciones() {
     const [activeIndex, setActiveIndex] = useState<number>(0);
     return <div>
-        <Title content="4.3 Hubs y Switches" />
+        <Title content="4.4 Protocolo de resolución de direcciones" />
         <Card title="Contenido" className="mb-10">
             <ul className="px-5 list-disc">
                 <li><IndexAnchor content={index["intro"]} /></li>
-                <li><IndexAnchor content={index["switches"]} /></li>
-                <li><IndexAnchor content={index["funcSwitch"]} /></li>
-                <li><IndexAnchor content={index["hubs"]} /></li>
-                <li><IndexAnchor content={index["funcHubs"]} /></li>
-                <li><IndexAnchor content={index["comparacion"]} /></li>
+                {/* <li><IndexAnchor content={index["tipos"]} /></li> */}
+                <li><IndexAnchor content={index["func"]} /></li>
+                <li><IndexAnchor content={index["tablas"]} /></li>
             </ul>
         </Card>
         <article className="mb-10">
-        </article>
-        <article className="mb-10">
-            <Subtitle content={index["switches"]} />
             <div className="card flex flex-wrap">
-                <GridTwo>
+                <GridTwo align="items-center">
                     <GridItem>
                         <Subtitle content={index["intro"]} />
                         <div>
                             <Paragraph className="text-gray-500 dark:text-gray-400">
-                                Dispositivos como los switches y los hubs son fundamentales para establecer y gestionar una conectividad eficiente y confiable. Estos componentes, aunque a menudo pasan desapercibidos, desempeñan un papel esencial en la estructura y el funcionamiento de las redes modernas
+                                Los protocolos se pueden definir como un conjunto de nomras y convenciones que rigen la forma en que los dispositivos de una red intercambian información.
+                                En la capa de internet del modelo TCP/IP existen diversos protocolos, dentro de los que se encuentra ICMP, ARP y RARP etc.
                             </Paragraph>
-                            <Paragraph className="text-gray-500 dark:text-gray-400">
-                                Los switches son piezas de construcción clave para una red que operan en la capa 2. Permiten que varios dispositivos, tales como computadoras, access points, impresoras y servidores; se conecten entre sí. Es decir que un switch permite a los dispositivos conectados compartir información y comunicarse.
+                            <Paragraph>
+                                Estos permiten la comunicación de los equipos y son escenciales dentro de la red. Uno de los más importantes es ARP pues determina la dirección de la capa de enlace de datos, la dirección MAC, para las direcciones IP conocidas
                             </Paragraph>
-                            <Paragraph className="text-gray-500 dark:text-gray-400">
-                                Dentro de los switches podemos clasificarlos de acuerdo al nivel de configuración que requieren:
-                            </Paragraph>
-                            <div className="card">
+
+
+                            {/* <div className="card">
                                 <TabView>
                                     <TabPanel header="Administrados">
                                         <Paragraph className="text-gray-500 dark:text-gray-400">
@@ -94,19 +86,19 @@ export default function HubsSwitches() {
                                         </Paragraph>
                                     </TabPanel>
                                 </TabView>
-                            </div>
+                            </div> */}
                         </div>
                     </GridItem>
                     <GridItemCenter>
-                        <Image src="https://www.sincable.mx/wp-content/uploads/2020/01/42502782_m.jpg" alt="switch" />
+                        <Image src="https://kinsta.com/wp-content/uploads/2023/02/DNS-links-domain.png" alt="switch" />
                     </GridItemCenter>
                 </GridTwo>
             </div>
         </article>
-        <article className="mb-10">
+        {/* <article className="mb-10">
             <div>
                 <div>
-                    <Subtitle content={index["funcSwitch"]} />
+                    <Subtitle content={index["tipos"]} />
                     <div className="card">
                         <TabView>
                             <TabPanel header="Conmutación">
@@ -140,40 +132,60 @@ export default function HubsSwitches() {
                 </div>
 
             </div>
-        </article>
+        </article> */}
         <article className="mb-10">
-        </article>
-        <article className="mb-10">
-            <GridTwo>
-                <GridItemCenter>
-                    <Image src="https://www.profesionalreview.com/wp-content/uploads/2019/02/HUB-Ethernet.jpg" alt="Imagen hub" />
-                </GridItemCenter>
+            <GridTwo align="items-start">
                 <GridItem>
-                    <Subtitle content={index["hubs"]} />
-                    <div className="card">
-                        <Paragraph className="text-gray-500 dark:text-gray-400">
-                            De forma similar a un switch, el hub conecta diferentes nodos o dispositivos de red. Operan en la capa 1 del modelo OSI. Su principal objetivo es reenviar inmediatamente los datos recibidos.
-                            A pesar de su alto uso uso en el pasado, actualmente se suele preferir un switch sobre el hub.
+                    <Subtitle content={index["func"]} />
+                    <div className="card" >
+                        <Paragraph className="">
+                            Primeramente tenemos que entender que ARP convierte dinámicamente las direcciones de Internet en las direcciones de hardware exclusivas de las redes de área local. Este es su objetivo principal
                         </Paragraph>
-                    </div>
-                    <Subtitle content={index["funcHubs"]} />
-                    <div className="card">
-                        <Paragraph className="text-gray-500 dark:text-gray-400">
-                            Como ya se mencionó el hub es similar al switch en cuanto a propósito, sin embargo la forma en que lo hace es radicalmente diferente. El hub recibe los datos y los hace llegar a todos los dispositivos que tiene conectados en sus puertos.
-                            Esta transmisión es half duplex, esto quiere decir que transmite datos en ambas direcciones sin embargo no al mismo tiempo, por lo tanto sufre en velocidad. También cabe recalcar que como esta transmisión no excluye a ningún host, todos estos reciben los datos y constantemente están ocupados generando alto tráfico en la red.
+                        <Paragraph className="">
+                            Para ilustrar cómo funciona ARP, imaginemos dos nodos, X y Y. Si el nodo X desea comunicarse con Y y X e Y están en redes de área local (LAN) diferentes, X e Y se comunican a través de puentes, direccionadores o pasarelas, utilizando direcciones IP.
+                            En una LAN, los nodos se comunican utilizando direcciones de hardware de bajo nivel. Aquí es donde entra ARP.
+                            Los nodos del mismo segmento de la misma LAN utilizan ARP para determinar la dirección de hardware de otros nodos.
                         </Paragraph>
-
+                        <Subtitle content={"La magia de arp"} />
+                        <GridTwo align="items-start" style={{
+                            justifyItems: "start"
+                        }}>
+                            <GridItem className="self-start">
+                                <Paragraph>
+                                    En primer lugar, el nodo X difunde una petición ARP para la dirección de hardware del nodo Y. La petición ARP contiene las direcciones IP y de hardware de X y la dirección IP de Y. Cuando Y recibe la petición ARP, pone una entrada para X en la antememoria de ARP (que se utiliza para correlacionar rápidamente de la dirección IP a la dirección de hardware) y, a continuación responde directamente a X con una respuesta de ARP que contiene las direcciones IP y de hardware de Y. Cuando el nodo X recibe la respuesta ARP de Y, pone una entrada para Y en la antememoria de ARP.
+                                </Paragraph>
+                            </GridItem>
+                            <GridItem>
+                                <Paragraph>
+                                    Una vez que existe una entrada en la memoria para ARP en X para Y, el nodo X puede de enviar paquetes directamente a Y sin recurrir otra vez a ARP (a menos que se suprima la entrada de antememoria de ARP para Y, en cuyo caso se vuelve a utilizar ARP para contactar con Y).
+                                </Paragraph>
+                                <Paragraph>
+                                    De esta forma, es mucho más eficiente el proceso de transmisión de mensajes, pues tenemos canal "directo" entre los equipos, lo que genera menos tráfico de red y hace mejor uso de los recursos disponibles
+                                </Paragraph>
+                            </GridItem>
+                        </GridTwo>
                     </div>
                 </GridItem>
+                <GridItemCenter>
+                    <Image src="https://www.checkpoint.com/wp-content/uploads/icon-arp.jpg" alt="Imagen hub" />
+                </GridItemCenter>
             </GridTwo>
         </article>
         <article className="mb-10">
-            <Subtitle content={index["comparacion"]} />
-            <div className="flex">
-                <DataTable className="mx-auto" value={diferencias} tableStyle={{ maxWidth: '35rem' }} >
-                    <Column field="switch" header="Switch"></Column>
-                    <Column field="hub" header="Hub"></Column>
-                </DataTable>
+            <Subtitle content={index["tablas"]} />
+            <Paragraph>
+                La parte más importante del protoclo ARP son sus tablas de direccionamiento. Como ya se mencionó previamente, estas guardan en cada fila la dirección IP y su dirección MAC asociada.
+                Lo podemos entender como un diccionario o un directorio de ip y mac.
+            </Paragraph>
+            <Paragraph>
+                Dependiendo del sistema operativo, se pueden revisar el cache generado por la tabla ARP. En windows de usa el comando:
+            </Paragraph>
+            <Consolecode code="arp -a" />
+            <Paragraph>
+                Este comando nos mostraría una salida similar a esta:
+            </Paragraph>
+            <div className="flex justify-center">
+                <Image src="https://www.meridianoutpost.com/resources/articles/command-line/images/arp-s.png" />
             </div>
         </article>
 

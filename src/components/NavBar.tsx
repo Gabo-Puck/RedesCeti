@@ -22,51 +22,64 @@ function NavBar() {
           command: () => {
             navigate("/unidades/u1/Tema1_2");
           },
-          items: [
-            {
-              label: "1.2.1 Dispositivos",
-            },
-            {
-              label: "1.2.2 Medios",
-            },
-            {
-              label: "1.2.3 Servicios",
-            },
-          ],
+          // items: [
+          //   {
+          //     label: "1.2.1 Dispositivos",
+          //   },
+          //   {
+          //     label: "1.2.2 Medios",
+          //   },
+          //   {
+          //     label: "1.2.3 Servicios",
+          //   },
+          // ],
         },
         {
           label: "1.3 Topología de redes",
-          items: [
-            {
-              label: "1.3.1 LAN",
-            },
-            {
-              label: "1.3.2 MAN",
-            },
-            {
-              label: "1.3.3 WAN",
-            },
-          ],
+          command: () => {
+            navigate("/unidades/u1/Tema1_3");
+          },
+          // items: [
+          //   {
+          //     label: "1.3.1 LAN",
+          //   },
+          //   {
+          //     label: "1.3.2 MAN",
+          //   },
+          //   {
+          //     label: "1.3.3 WAN",
+          //   },
+          // ],
         },
         {
           label: "1.4 Modelo de un sistema de comunicaciones",
+          command: () => {
+            navigate("/unidades/u1/Tema1_4");
+          },
         },
         {
           label: "1.5 Direccionamiento de red",
+          command: () => {
+            navigate("/unidades/u1/Tema1_5");
+          },
         },
         {
           label: "1.6 Modelos de Referencia",
-          items: [
-            {
-              label: "1.6.1 Modelo TCP/IP",
-            },
-            {
-              label: "1.6.2 Modelo OSI ",
-            },
-            {
-              label: "1.6.3 Comparación entre Modelo TCP/IP y OSI ",
-            },
-          ],
+          command: () => {
+            navigate("/unidades/u1/Tema1_6");
+          },
+
+          // items: [
+          //   {
+          //     label: "1.6.1 Modelo TCP/IP",
+          //   },
+          //   {
+          //     label: "1.6.2 Modelo OSI ",
+          //   },
+          //   {
+          //     label: "1.6.3 Comparación entre Modelo TCP/IP y OSI ",
+          //   },
+          // ],
         },
       ],
     },
@@ -269,26 +282,44 @@ function NavBar() {
         },
         {
           label: "4.2 Control de acceso al medio",
+          command: () => {
+            navigate("/unidades/u4/Tema4_2");
+          },
         },
         {
           label: "4.3 Hubs y switches",
+          command: () => {
+            navigate("/unidades/u4/Tema4_3");
+          },
         },
         {
           label: "4.4 Protocolo de resolución de direcciones",
+          command: () => {
+            navigate("/unidades/u4/Tema4_4");
+          },
         },
         {
           label: "4.5 Realización de una red física",
+          command: () => {
+            navigate("/unidades/u4/Tema4_5");
+          },
         },
         {
           label: "4.6 Interconexión entre dispositivos",
           items: [
             {
               label: "4.6.1 Conexión de LAN y WAN",
+              command: () => {
+                navigate("/unidades/u4/Tema4_6");
+              },
             },
           ],
         },
         {
           label: "4.7 Esquema de direccionamiento",
+          command: () => {
+            navigate("/unidades/u4/Tema4_7");
+          },
         },
       ],
     },
