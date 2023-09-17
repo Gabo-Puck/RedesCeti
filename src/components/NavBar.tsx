@@ -183,37 +183,15 @@ function NavBar() {
       items: [
         {
           label: "3.1 Medios de transmisión terrestres o guiados.",
-          items: [
-            {
-              label: "3.1.1 Cable coaxial.",
-            },
-            {
-              label: "3.1.2 Par trenzado",
-            },
-            {
-              label: "3.1.3 Fibra óptica",
-            },
-          ],
+          command: () => {
+            navigate("/unidades/u3/Tema3_1");
+          },
         },
         {
           label: "3.2 Medios de transmisión aéreos o no guiados",
-          items: [
-            {
-              label: "3.2.1 Redes inalámbricas",
-            },
-            {
-              label: "3.2.2 Microondas",
-            },
-            {
-              label: "3.2.3 Enlaces satelitales",
-            },
-            {
-              label: "3.2.4 Rayo láser",
-            },
-            {
-              label: "3.2.5 Infrarrojo",
-            },
-          ],
+          command: () => {
+            navigate("/unidades/u3/Tema3_2");
+          },
         },
         {
           label: "3.3 Estándares de la capa física: RS-232, RS-422, RS-449",
