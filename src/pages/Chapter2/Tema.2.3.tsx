@@ -25,7 +25,7 @@ export default function CapadeRed() {
 
 
                 </Card>
-            </div>
+            </div> 
 
         </>
     );
