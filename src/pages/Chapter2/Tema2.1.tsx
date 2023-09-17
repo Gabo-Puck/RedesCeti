@@ -10,7 +10,7 @@ export default function CapadeAplicacion() {
         <img alt="Card" src="https://geekflare.com/wp-content/uploads/2022/05/session-layer-963x385.png" />
     );
     return (
-        <>
+        <> 
 
             <div className="card">
                 <Card title="2.1 Capas de aplicación." className="md:w-20rem" header={header}  >
