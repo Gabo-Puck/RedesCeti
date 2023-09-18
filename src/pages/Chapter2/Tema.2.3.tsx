@@ -2,12 +2,13 @@ import React from "react";
 
 
 
+
 import { Card } from 'primereact/card';
 
 
 export default function CapadeRed() {
     const header = (
-        <img alt="Card" src="https://web-assets.esetstatic.com/wls/2015/05/red_informatica.png" />
+        <img alt="Card" src="https://edimar.com/wp-content/uploads/2021/03/edge-computing-que-es-5g-edimar.jpg" />
     );
     return (
         <>
@@ -22,8 +23,6 @@ export default function CapadeRed() {
 
                         La tarea principal del network layer consiste tanto en conmutar como en establecer e interrumpir conexiones. Las conexiones seguras del sistema están vinculadas entre sí, aunque para ello tengan que ser enrutadas a través de varias redes. En este caso, la capa de red selecciona una ruta y luego proporciona a las capas superiores una conexión transparente entre el sistema de origen y el de destino.
                     </p>
-
-
                 </Card>
             </div> 
 
