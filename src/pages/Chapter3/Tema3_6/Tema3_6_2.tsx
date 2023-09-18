@@ -84,8 +84,7 @@ export default function Tema3_6_2() {
       <ul className="px-5 list-disc">
         <li><IndexAnchor content={index["switches"]} /></li>
         <li><IndexAnchor content={index["funcSwitch"]} /></li>
-        <li><IndexAnchor content={index["hubs"]} /></li>
-        <li><IndexAnchor content={index["funcHubs"]} /></li>
+        <li><IndexAnchor content={index["comparacion"]} /></li>
       </ul>
     </Card>
     <article className="mb-10">

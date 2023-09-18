@@ -24,58 +24,7 @@ const index = {
     "Caracteristicas y funciones del router",
   comparacion: "Comparativa entre Frame Relay y ATM"
 }
-const diferencias = [
-  {
-    caracteristica: "Tipo de Conmutación	",
-    frame: 'Conmutación de paquetes',
-    atm: "Conmutación de celdas",
-  },
-  {
-    caracteristica: "Tamaño de Unidad de Datos	",
-    frame: 'Tramas (frames) de tamaño variable',
-    atm: 'Celdas de tamaño fijo (53 bytes)',
-  },
-  {
-    caracteristica: "Conexiones Virtuales	",
-    frame: 'Sí, utilizando DLCI (Data Link Connection Identifier)	',
-    atm: 'Sí, utilizando VPI (Virtual Path Identifier) y VCI (Virtual Channel Identifier)',
-  },
-  {
-    caracteristica: "Control de Congestión",
-    frame: 'Control de congestión basado en ventana deslizante	',
-    atm: 'Utiliza estrategias de congestión y control de tráfico más avanzadas, como ABR (Available Bit Rate) y UBR (Unspecified Bit Rate)',
-  },
-  {
-    caracteristica: "Ancho de Banda	",
-    frame: 'Asignación estática de ancho de banda',
-    atm: 'Permite asignación dinámica de ancho de banda y garantiza QoS (Quality of Service)',
-  },
-  {
-    caracteristica: "Uso Principal",
-    frame: 'Redes de datos y voz menos crítica',
-    atm: 'Aplicaciones críticas como voz y video en tiempo real',
-  },
-  {
-    caracteristica: "Latencia",
-    frame: 'Mayor latencia en comparación con ATM',
-    atm: 'Menor latencia en comparación con Frame Relay',
-  },
-  {
-    caracteristica: "Flexibilidad",
-    frame: 'Menor flexibilidad para gestionar diferentes tipos de tráfico',
-    atm: 'Mayor flexibilidad para acomodar varios tipos de tráfico, incluyendo voz, video y datos',
-  },
-  {
-    caracteristica: "Costo",
-    frame: 'Generalmente más económico que ATM',
-    atm: 'Históricamente más costoso debido a su complejidad y características avanzadas',
-  },
-  {
-    caracteristica: "Actualidad",
-    frame: 'Menos común en la actualidad debido a la adopción de tecnologías más modernas',
-    atm: 'Todavía se utiliza en algunas redes, pero su uso ha disminuido en favor de tecnologías como MPLS y Ethernet',
-  },
-]
+
 export default function Tema3_7_1() {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   return <div>
@@ -84,8 +33,6 @@ export default function Tema3_7_1() {
       <ul className="px-5 list-disc">
         <li><IndexAnchor content={index["switches"]} /></li>
         <li><IndexAnchor content={index["funcSwitch"]} /></li>
-        <li><IndexAnchor content={index["hubs"]} /></li>
-        <li><IndexAnchor content={index["funcHubs"]} /></li>
       </ul>
     </Card>
     <article className="mb-10">
