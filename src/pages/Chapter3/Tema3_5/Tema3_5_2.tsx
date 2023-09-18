@@ -14,169 +14,192 @@ import GridItemCenter from "../../../components/GridItemCenter";
 import Paragraph from "../../../components/Paragraph";
 
 const index = {
-    intro:
-        "Introducción a Switches y Hubs",
-    switches:
-        "Switches",
-    funcSwitch:
-        "¿Cómo funcionan los switches?",
-    hubs:
-        "Hubs",
-    funcHubs:
-        "¿Cómo funcionan los hubs?",
-    comparacion:
-        "Comparativa entre switches y hubs",
+  switches:
+    "Switches",
+  funcSwitch:
+    "Caracteristicas y funciones del switch",
+  hubs:
+    "Router",
+  funcHubs:
+    "Caracteristicas y funciones del router",
 }
 const diferencias = [
-    {
-        switch: 'La trama se envía a un host en específico',
-        hub: "La trama se envía a todos los host",
-    },
-    {
-        switch: 'Genera menos tráfico en la red',
-        hub: 'Genera más tráfico en la red',
-    },
-    {
-        switch: 'Uso de tablas de dirección MAC',
-        hub: 'No identifica a los puertos por dirección MAC',
-    },
-    {
-        switch: 'Genera más seguridad al segmentar o dirigir la trama',
-        hub: 'Genera inseguridad en la red',
-    },
-    {
-        switch: 'Ofrecen más flexibilidad de configuraciones para diferentes casos',
-        hub: '',
-    },
+  {
+    switch: 'La trama se envía a un host en específico',
+    hub: "La trama se envía a todos los host",
+  },
+  {
+    switch: 'Genera menos tráfico en la red',
+    hub: 'Genera más tráfico en la red',
+  },
+  {
+    switch: 'Uso de tablas de dirección MAC',
+    hub: 'No identifica a los puertos por dirección MAC',
+  },
+  {
+    switch: 'Genera más seguridad al segmentar o dirigir la trama',
+    hub: 'Genera inseguridad en la red',
+  },
+  {
+    switch: 'Ofrecen más flexibilidad de configuraciones para diferentes casos',
+    hub: '',
+  },
 ]
 export default function SwitchRouter() {
-    const [activeIndex, setActiveIndex] = useState<number>(0);
-    return <div>
-        <Title content="4.3 Hubs y Switches" />
-        <Card title="Contenido" className="mb-10">
-            <ul className="px-5 list-disc">
-                <li><IndexAnchor content={index["intro"]} /></li>
-                <li><IndexAnchor content={index["switches"]} /></li>
-                <li><IndexAnchor content={index["funcSwitch"]} /></li>
-                <li><IndexAnchor content={index["hubs"]} /></li>
-                <li><IndexAnchor content={index["funcHubs"]} /></li>
-                <li><IndexAnchor content={index["comparacion"]} /></li>
-            </ul>
-        </Card>
-        <article className="mb-10">
-        </article>
-        <article className="mb-10">
-            <Subtitle content={index["switches"]} />
-            <div className="card flex flex-wrap">
-                <GridTwo>
-                    <GridItem>
-                        <Subtitle content={index["intro"]} />
-                        <div>
-                            <Paragraph className="text-gray-500 dark:text-gray-400">
-                                Dispositivos como los switches y los hubs son fundamentales para establecer y gestionar una conectividad eficiente y confiable. Estos componentes, aunque a menudo pasan desapercibidos, desempeñan un papel esencial en la estructura y el funcionamiento de las redes modernas
-                            </Paragraph>
-                            <Paragraph className="text-gray-500 dark:text-gray-400">
-                                Los switches son piezas de construcción clave para una red que operan en la capa 2. Permiten que varios dispositivos, tales como computadoras, access points, impresoras y servidores; se conecten entre sí. Es decir que un switch permite a los dispositivos conectados compartir información y comunicarse.
-                            </Paragraph>
-                            <Paragraph className="text-gray-500 dark:text-gray-400">
-                                Dentro de los switches podemos clasificarlos de acuerdo al nivel de configuración que requieren:
-                            </Paragraph>
-                            <div className="card">
-                                <TabView>
-                                    <TabPanel header="Administrados">
-                                        <Paragraph className="text-gray-500 dark:text-gray-400">
-                                            Están diseñados para que uno pueda simplemente conectarlo y ya funcione (Como si fuera plug and play). Se usan para casos muy básicos como redes domésticas, laboratorios o salas de conferencias.
-                                        </Paragraph>
-                                    </TabPanel>
-                                    <TabPanel header="No administrados">
-                                        <Paragraph className="text-gray-500 dark:text-gray-400">
-                                            Están diseñados para ser más seguros, flexibles y con más funciones. Requieren una configuración personalizada, por lo tanto sus casos de uso son más extensos dependiendo de las necesidades de quien lo configure.
-                                        </Paragraph>
-                                    </TabPanel>
-                                </TabView>
-                            </div>
-                        </div>
-                    </GridItem>
-                    <GridItemCenter>
-                        <Image src="https://www.sincable.mx/wp-content/uploads/2020/01/42502782_m.jpg" alt="switch" />
-                    </GridItemCenter>
-                </GridTwo>
-            </div>
-        </article>
-        <article className="mb-10">
+  const [activeIndex, setActiveIndex] = useState<number>(0);
+  return <div>
+    <Title content="3.5.2 Switch y Router" />
+    <Card title="Contenido" className="mb-10">
+      <ul className="px-5 list-disc">
+        <li><IndexAnchor content={index["switches"]} /></li>
+        <li><IndexAnchor content={index["funcSwitch"]} /></li>
+        <li><IndexAnchor content={index["hubs"]} /></li>
+        <li><IndexAnchor content={index["funcHubs"]} /></li>
+      </ul>
+    </Card>
+    <article className="mb-10">
+    </article>
+    <article className="mb-10">
+      <div className=" flex flex-wrap">
+        <Subtitle content={index["switches"]} />
+        <Paragraph className="text-gray-500 dark:text-gray-400">
+          Un switch es un dispositivo de red que se utiliza para conectar varios dispositivos de red en una red local (LAN) para permitir la comunicación entre ellos. Es un equipo fundamental en la infraestructura de redes modernas. El switch opera en la capa 2 (capa de enlace de datos) del modelo OSI.
+        </Paragraph>
+        <GridTwo align="items-center">
+          <GridItem>
             <div>
-                <div>
-                    <Subtitle content={index["funcSwitch"]} />
-                    <div className="card">
-                        <TabView>
-                            <TabPanel header="Conmutación">
-                                <Paragraph className="text-gray-500 dark:text-gray-400 mb-5">
-                                    Es la funcionalidad básica de un switch. Esta consiste en transferir datos entre los diferentes dispositivos de la red. Para esto se utilizan datos que están en la cabecera de la trama Ethernet
-                                </Paragraph>
-                                <Paragraph className="text-gray-500 dark:text-gray-400 mb-5">
-                                    Ya se hablo anteriormente de que es ethernet y características generales. Ahora veremos como funciona la conmutación con ethernet.
-                                </Paragraph>
-                                <Paragraph className="text-gray-500 dark:text-gray-400 mb-5">
-                                    Están diseñados para que uno pueda simplemente conectarlo y ya funcione (Como si fuera plug and play). Se usan para casos muy básicos como redes domésticas, laboratorios o salas de conferencias.
-                                </Paragraph>
-                                <Paragraph className="text-gray-500 dark:text-gray-400 mb-5">
-                                    Ethernet es la tecnología que se encarga de interconectar a los dispositivos de manera cableada en la mayoría de topologías. En este proceso de transmisión los datos se dividen en tramas y cada trama contiene información de control denominada **cabecera**. Dicha cabecera contiene la dirección MAC del dispositivo emisor y el dispositivo receptor.
-                                </Paragraph>
-                                <Paragraph className="text-gray-500 dark:text-gray-400 mb-5">
-                                    Ahora, dentro de los switches se guarda una tabla de direcciones MAC de todos los dispositivos conectados al switch y cada MAC tiene asociado el puerto al que esta conectado de manera física. De esta manera el switch sabe a que puerto tiene que redirigir la trama correspondiente.
-                                </Paragraph>
-                            </TabPanel>
-                            <TabPanel header="Buffer">
-                                <div className="flex flex-wrap md:flex-wrap-reverse">
-                                    <div>
-                                        <Paragraph className="text-gray-500 dark:text-gray-400">
-                                            Otra parte fundamental de los switches son los buffers. Estas son zonas de memoria donde se almacenan las tramas antes de ser reenviadas al puerto correspondiente. Esta característica además permite al switch gestionar de mejor manera los envíos de tramas cuando los puertos están congestionados.
-                                        </Paragraph>
-                                    </div>
-                                </div>
-                            </TabPanel>
-                        </TabView>
-                    </div>
-                </div>
-
             </div>
-        </article>
-        <article className="mb-10">
-        </article>
-        <article className="mb-10">
-            <GridTwo>
-                <GridItemCenter>
-                    <Image src="https://www.profesionalreview.com/wp-content/uploads/2019/02/HUB-Ethernet.jpg" alt="Imagen hub" />
-                </GridItemCenter>
-                <GridItem>
-                    <Subtitle content={index["hubs"]} />
-                    <div className="card">
-                        <Paragraph className="text-gray-500 dark:text-gray-400">
-                            De forma similar a un switch, el hub conecta diferentes nodos o dispositivos de red. Operan en la capa 1 del modelo OSI. Su principal objetivo es reenviar inmediatamente los datos recibidos.
-                            A pesar de su alto uso uso en el pasado, actualmente se suele preferir un switch sobre el hub.
-                        </Paragraph>
-                    </div>
-                    <Subtitle content={index["funcHubs"]} />
-                    <div className="card">
-                        <Paragraph className="text-gray-500 dark:text-gray-400">
-                            Como ya se mencionó el hub es similar al switch en cuanto a propósito, sin embargo la forma en que lo hace es radicalmente diferente. El hub recibe los datos y los hace llegar a todos los dispositivos que tiene conectados en sus puertos.
-                            Esta transmisión es half duplex, esto quiere decir que transmite datos en ambas direcciones sin embargo no al mismo tiempo, por lo tanto sufre en velocidad. También cabe recalcar que como esta transmisión no excluye a ningún host, todos estos reciben los datos y constantemente están ocupados generando alto tráfico en la red.
-                        </Paragraph>
+            <Subtitle content={index["funcSwitch"]} />
+            <Paragraph className="text-gray-500 dark:text-gray-400">
+              Las funciones y caracteristicas claves de un switch son:
+            </Paragraph>
+            <ul className="px-5 list-disc">
+              <li>
+                <Paragraph>
+                  <b>
+                    Conexión de dispositivos:
+                  </b>
+                  Un switch permite conectar varios dispositivos, como computadoras, impresoras, servidores y otros dispositivos de red, en una red local.
 
-                    </div>
-                </GridItem>
-            </GridTwo>
-        </article>
-        <article className="mb-10">
-            <Subtitle content={index["comparacion"]} />
-            <div className="flex">
-                <DataTable className="mx-auto" value={diferencias} tableStyle={{ maxWidth: '35rem' }} >
-                    <Column field="switch" header="Switch"></Column>
-                    <Column field="hub" header="Hub"></Column>
-                </DataTable>
-            </div>
-        </article>
+                </Paragraph>
+              </li>
+              <li>
+                <Paragraph>
+                  <b>
+                    Conmutación de paquetes:
+                  </b>
+                  Un switch toma decisiones basadas en la dirección MAC (Media Access Control) de los dispositivos conectados y dirige los paquetes de datos de manera eficiente desde el origen al destino.
 
-    </div>
+                </Paragraph>
+              </li>
+              <li>
+                <Paragraph>
+                  <b>
+                    Tabla de direcciones MAC:
+                  </b>
+                  El switch mantiene una tabla de direcciones MAC (a menudo conocida como tabla de direcciones de switching) que asocia las direcciones MAC de los dispositivos conectados a sus puertos respectivos.
+
+                </Paragraph>
+              </li>
+              <li>
+                <Paragraph>
+                  <b>
+                    Comunicación eficiente:
+                  </b>
+                  Al utilizar la tabla de direcciones MAC, el switch puede enviar los paquetes de datos solo al puerto específico donde se encuentra el dispositivo de destino, mejorando la eficiencia de la red.
+
+                </Paragraph>
+              </li>
+              <li>
+                <Paragraph>
+                  <b>
+                    Control de flujo y reenvío de paquetes:
+                  </b>
+                  Los switches controlan el flujo de datos y reenvían los paquetes solo a los puertos necesarios, lo que optimiza el tráfico de la red.
+
+                </Paragraph>
+              </li>
+            </ul>
+          </GridItem>
+          <GridItemCenter>
+            <Image src="https://blogthinkbig.com/wp-content/uploads/sites/4/2021/04/Network-Switch.jpeg?w=610" alt="switch" />
+          </GridItemCenter>
+        </GridTwo>
+      </div>
+    </article>
+
+    <article className="mb-10">
+    </article>
+    <article className="mb-10">
+      <Subtitle content={index["hubs"]} />
+      <div>
+        <Paragraph className="text-gray-500 dark:text-gray-400">
+          Un router es otro componente fundamental en las redes de computadoras. A diferencia de un switch, que opera principalmente en la capa 2 del modelo OSI (capa de enlace de datos), un router opera en la capa 3 (capa de red) y realiza funciones esenciales para la comunicación entre redes.
+        </Paragraph>
+        <Paragraph>
+          A continuación se describen sus características fundamentales:
+        </Paragraph>
+      </div>
+
+      <Subtitle content={index["funcHubs"]} />
+      <GridTwo>
+        <GridItem>
+          <Paragraph>
+            <b>
+              Interconexión de redes:
+            </b>
+            Un router es un dispositivo que se utiliza para conectar diferentes redes, como redes locales (LANs) o redes amplias (WANs), y permite que los datos se comuniquen entre ellas.
+
+          </Paragraph>
+          <Paragraph>
+            <b>
+              Enrutamiento:
+            </b>
+            La función principal de un router es determinar la ruta óptima que deben seguir los paquetes de datos desde el origen hasta su destino a través de la red. Esto se basa en la dirección IP de destino de los paquetes.
+
+          </Paragraph>
+          <Paragraph>
+            <b>
+              Tabla de enrutamiento:
+            </b>
+            El router mantiene una tabla de enrutamiento que contiene información sobre las rutas disponibles y cómo llegar a diferentes redes, incluidas las direcciones de red y las interfaces de salida.
+
+          </Paragraph>
+          <Paragraph>
+            <b>
+              Direccionamiento IP:
+            </b>
+            Un router utiliza direcciones IP para identificar y enrutar los paquetes de datos. Puede traducir entre direcciones IP públicas y privadas, permitiendo la comunicación entre diferentes redes.
+
+          </Paragraph>
+          <Paragraph>
+            <b>
+              Control de tráfico y congestión:
+            </b>
+            Los routers pueden implementar políticas de control de tráfico para gestionar el flujo de datos y evitar la congestión de la red. Pueden utilizar técnicas como QoS (Calidad de Servicio) para priorizar ciertos tipos de tráfico.
+
+          </Paragraph>
+          <Paragraph>
+            <b>
+              Firewall y seguridad:
+            </b>
+            Muchos routers incluyen funciones de firewall para proteger la red contra amenazas externas y controlar el acceso a la red desde el exterior.
+
+          </Paragraph>
+          <Paragraph>
+            <b>
+              NAT (Network Address Translation):
+            </b>
+            Los routers utilizan NAT para traducir direcciones IP privadas internas a direcciones IP públicas externas, permitiendo que varios dispositivos en una red compartan una sola dirección IP pública.
+
+          </Paragraph>
+        </GridItem>
+        <GridItemCenter>
+          <Image src="https://www.profesionalreview.com/wp-content/uploads/2019/02/HUB-Ethernet.jpg" alt="Imagen hub" />
+        </GridItemCenter>
+      </GridTwo>
+    </article>
+
+  </div>
 
 }
