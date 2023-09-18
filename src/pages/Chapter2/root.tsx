@@ -6,6 +6,9 @@ import CapadeTransporte from "./Tema2.2";
 import TCP from "./Tema2.2.1";
 import Administracion from "./Tema.2.2.2";
 import CapadeRed from "./Tema.2.3";
+import Enrutamiento from "./Tema2.3.1";
+import Direccionamiento from "./Tema2.3.2";
+import Calculos from "./Tema2.3.3";
 
 
 const routerUnidad2: RouteObject = {
@@ -39,6 +42,19 @@ const routerUnidad2: RouteObject = {
             path: "CapadeRed",
             element: <CapadeRed/>,
         },
+        {
+            path: "Enrutamiento",
+            element: <Enrutamiento/>,
+        },
+        {
+            path: "Direccionamiento",
+            element: <Direccionamiento/>,
+        },
+        {
+            path: "Calculos",
+            element: <Calculos/>,
+        },
+
 
 
 

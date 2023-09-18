@@ -138,12 +138,21 @@ function NavBar() {
           items: [
             {
               label: "2.3.1 Enrutamiento estático y dinámico",
+              command: () => {
+                navigate("/unidades/u2/Enrutamiento");
+              },
             },
             {
               label: "2.3.2 Direccionamiento IPv4",
+              command: () => {
+                navigate("/unidades/u2/Direccionamiento");
+              },
             },
             {
               label: "2.3.3 Tipos y cálculo de direcciones",
+              command: () => {
+                navigate("/unidades/u2/Calculos");
+              },
             },
             {
               label: "2.3.4 Direcciones públicas y privadas",
