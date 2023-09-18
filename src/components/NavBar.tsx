@@ -218,9 +218,15 @@ function NavBar() {
           items: [
             {
               label: "3.5.1 Repetidor y Hub",
+              command: () => {
+                navigate("/unidades/u3/Tema3_5_1");
+              },
             },
             {
               label: "3.5.2 Switch y Router",
+              command: () => {
+                navigate("/unidades/u3/Tema3_5_2");
+              },
             },
           ],
         },
@@ -229,9 +235,15 @@ function NavBar() {
           items: [
             {
               label: "3.6.1 ATM",
+              command: () => {
+                navigate("/unidades/u3/Tema3_6_1");
+              },
             },
             {
               label: "3.6.2 Frame Relay",
+              command: () => {
+                navigate("/unidades/u3/Tema3_6_2");
+              },
             },
           ],
         },
@@ -240,9 +252,15 @@ function NavBar() {
           items: [
             {
               label: "3.7.1 Confidencialidad en modo con conexión",
+              command: () => {
+                navigate("/unidades/u3/Tema3_7_1");
+              },
             },
             {
               label: "3.7.2 Confidencialidad del flujo de datos",
+              command: () => {
+                navigate("/unidades/u3/Tema3_7_2");
+              },
             },
           ],
         },
