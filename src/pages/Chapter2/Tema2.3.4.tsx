@@ -1,52 +1,62 @@
 import React from "react";
 
 import { Divider } from 'primereact/divider';
+import { Image } from 'primereact/image';
 
 
 
 import { Card } from 'primereact/card';
 
 
-export default function Enrutamiento() {
+export default function DireccionesPP() {
 
     return (
         <>
 
             <div className="card">
-                <Card title="2.3.1 Enrutamiento estatico y dinamico." className="md:w-20rem"  >
+                <Card title="2.3.4 Direcciones publicas y privadas" className="md:w-20rem"  >
                     <p className="m-0">
-                        La función principal de los routers es la de buscar el mejor camino, entre los posibles, hacia un destino para dirigir tráfico de datos hacia él. Para llevarla a cabo utilizan tablas de enrutamiento que contienen información sobre las redes que están conectadas directamente al router, además de las rutas hacia otras redes.
+                    Aunque la mayoría de las direcciones IPv4 de host son direcciones públicas designadas para uso en redes a las que se accede desde Internet, existen bloques de direcciones que se utilizan en redes que requieren o no acceso limitado a Internet. Estas direcciones se denominan direcciones privadas.
                     </p>
-                    <br />
-                    <p className="m-0">
-                        En las redes existen muchas vías distintas para llegar a un mismo destino. Para elegir una de ellas se debe definir qué se entiende por “mejor ruta” y cuál es la métrica que se va utilizar para medirla. Haciendo una analogía con un ejemplo de nuestra vida cotidiana, se podría decir que, si estamos en nuestra casa y queremos llegar al supermercado, tendremos varias opciones o caminos para poder hacerlo, y elegiremos el que más nos convenga basándonos en diferentes criterios (métrica).
-                    </p>
-
-
+                   <br />
+                   <p>
+                   Las principales diferencias entre las direcciones IP públicas y privadas son su alcance y a qué se conectan. Una dirección IP pública lo identifica en Internet, de modo que toda la información que busque pueda llegar hasta usted. Una dirección IP privada se utiliza dentro de una red privada para conectarse de forma segura a otros dispositivos de la misma red.
+                   </p>
+                   <br />
                     <div className="card flex justify-content-center">
+                  
                         <p>
-                            El<b> enrutamiento estático </b>es aquel en el que el administrador de la red debe encargarse de configurar manualmente cada uno de los routers que forman la misma. Cuando se lleva a cabo este tipo de enrutamiento hay que acceder a cada router, configurarlo individualmente y enseñarle cada una de las rutas existentes.
+                        <p>
+                        Las direcciones privadas solo son visibles desde una red interna, pero no desde internet. Se utilizan generalmente para identificar los puestos de trabajo de las empresas. Se pueden utilizar tantas como se necesiten; no es necesario contratarlas.
+                        <br />
+                        </p>
+                            Las direcciones privadas se definen en RFC 1918, Asignación de direcciones para redes de Internet privadas, y en ocasiones se hace referencia a ellas como direcciones RFC 1918. Los bloques de direcciones de espacio privado, como se muestra en la ilustración, se utilizan en redes privadas. Los hosts que no requieren acceso a Internet pueden utilizar direcciones privadas. Sin embargo, dentro de la red privada, los hosts aún requieren direcciones IP únicas dentro del espacio privado.
+
                             <br />
 
-                            Este tipo de enrutamiento hace más fácil el mantenimiento de las tablas de enrutamiento en redes muy pequeñas, en las que se sabe previamente que no va a haber un aumento significativo de la misma. Normalmente, utiliza una única ruta por defecto o predeterminada que es la que dirige el tráfico hacia cualquier red que no tenga coincidencia con otra ruta de la tabla de routing.
-                            <br />
-
-                            Por lo indicado anteriormente, el enrutamiento estático se utiliza principalmente en redes con una cantidad pequeña de routers, las cuales tienen un solo gateway. Cuando se lleva a cabo este tipo de configuración, hay que especificar en cada router la IP de destino, la IP del router por la que se envían los paquetes, la distancia y la máscara de red.
                         </p>
 
                         <Divider layout="vertical" />
+                      
+                        <br />
                         <p>
-                            El <b>enrutamiento  dinámico</b> se basa en la utilización o empleo de protocolos de enrutamiento con el fin de automatizar el intercambio y la actualización de las tablas de enrutamiento de cada uno de los routers. Estos protocolos comparten las tablas de enrutamiento de forma automática con los routers cercanos, lo que hace que su utilización sea recomendada para redes grandes.
-                            <br />
-                            
-                            Si tenemos una red en la que utilizamos este tipo de enrutamiento, no importará la cantidad de routers que contenga, ya que podremos ir agregando en ella nuevos equipos y automáticamente todos los routers los conocerán sin necesidad de configurar cada uno de ellos de forma individualizada. Todo es automático, por ejemplo, si elimino una red WAN o LAN todos los equipos sabrán que no existe y no enviarán paquetes a la misma. O si por el contrario, la agrego, todos la conocerán y podrán comunicarse con ella.
+                        <p>
+                        Las direcciones públicas son indispensables para conectarse a internet, y resultan visibles para cualquier internauta; suele ser la que se asigna al router o al módem.
+                        </p>
+                        <br />
+                            La amplia mayoría de las direcciones en el rango de host unicast IPv4 son direcciones públicas. Estas direcciones están diseñadas para ser utilizadas en los hosts de acceso público desde Internet. Aun dentro de estos bloques de direcciones IPv4, existen muchas direcciones designadas para otros fines específicos.
+
+
                             <br />
 
-                            Es fundamental comprender que, en este caso, los routers se comunican unos a otros las redes a las que están conectados, lo que lo hace mucho más rápido y eficiente.
 
                         </p>
+
                     </div>
 
+                        <div className="card flex justify-content-center">
+                            <Image src="https://interpolados.files.wordpress.com/2017/03/129.png" alt="Image" preview width="450" />
+                        </div>
 
                 </Card>
             </div>

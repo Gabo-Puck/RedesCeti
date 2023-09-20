@@ -156,17 +156,30 @@ function NavBar() {
             },
             {
               label: "2.3.4 Direcciones públicas y privadas",
+              command: () => {
+                navigate("/unidades/u2/Direcciones");
+              },
             },
           ],
         },
         {
           label: "2.4 Capa Enlace de datos",
+          command: () => {
+            navigate("/unidades/u2/Enlace");
+          },
           items: [
             {
               label: "2.4.1 Acceso al medio",
+             
+              command: () => {
+                navigate("/unidades/u2/Acceso");
+              },
             },
             {
               label: "2.4.2 Técnicas de control de acceso al medio",
+              command: () => {
+                navigate("/unidades/u2/Tecnicas");
+              },
             },
           ],
         },

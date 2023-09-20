@@ -9,6 +9,10 @@ import CapadeRed from "./Tema.2.3";
 import Enrutamiento from "./Tema2.3.1";
 import Direccionamiento from "./Tema2.3.2";
 import Calculos from "./Tema2.3.3";
+import DireccionesPP from "./Tema2.3.4";
+import Enlace from "./Tema2.4";
+import Acceso from "./Tema2.4.1";
+import Tecnicass from "./Tema2.4.2";
 
 
 const routerUnidad2: RouteObject = {
@@ -54,8 +58,23 @@ const routerUnidad2: RouteObject = {
             path: "Calculos",
             element: <Calculos/>,
         },
-
-
+        {
+            path: "Direcciones",
+            element: <DireccionesPP/>,
+        },
+        {
+            path: "Enlace",
+            element: <Enlace/>,
+        },
+        {
+            path: "Acceso",
+            element: <Acceso/>,
+        },
+        {
+            path: "Tecnicas",
+            element: <Tecnicass/>,
+        },
+        
 
 
 
