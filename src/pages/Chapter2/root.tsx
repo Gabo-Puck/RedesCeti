@@ -13,6 +13,10 @@ import DireccionesPP from "./Tema2.3.4";
 import Enlace from "./Tema2.4";
 import Acceso from "./Tema2.4.1";
 import Tecnicass from "./Tema2.4.2";
+import CapaFisica from "./Tema2.5";
+import Comunicacion from "./Tema5.1.1";
+import Señalizacion from "./Tema5.1.2";
+import Medios from "./Tema5.1.3";
 
 
 const routerUnidad2: RouteObject = {
@@ -73,6 +77,22 @@ const routerUnidad2: RouteObject = {
         {
             path: "Tecnicas",
             element: <Tecnicass/>,
+        },
+        {
+            path: "Fisica",
+            element: <CapaFisica/>,
+        },
+        {
+            path: "Comunicacion",
+            element: <Comunicacion/>,
+        },
+        {
+            path: "Señalizacion",
+            element: <Señalizacion/>,
+        },
+        {
+            path: "Medios",
+            element: <Medios/>,
         },
         
 

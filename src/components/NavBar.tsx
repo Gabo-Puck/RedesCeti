@@ -185,15 +185,28 @@ function NavBar() {
         },
         {
           label: "2.5 Capa física.",
+          command: () => {
+            navigate("/unidades/u2/Fisica");
+          },
           items: [
             {
               label: "2.5.1 Señales de comunicación",
+              command: () => {
+                navigate("/unidades/u2/Comunicacion");
+              },
             },
             {
               label: "2.5.2 Señalización y codificación física",
+              command: () => {
+                navigate("/unidades/u2/Señalizacion");
+              },
+              
             },
             {
               label: "2.5.3 Medios físicos",
+              command: () => {
+                navigate("/unidades/u2/Medios");
+              },
             },
           ],
         },
