@@ -230,21 +230,36 @@ function NavBar() {
         },
         {
           label: "3.3 Estándares de la capa física: RS-232, RS-422, RS-449",
+          command: () => {
+            navigate("/unidades/u3/Tema3_3");
+          },
         },
         {
           label: "3.4 Cableado estructurado",
           items: [
             {
               label: "3.4.1 Estándar EIA/TIA 568",
+              command: () => {
+                navigate("/unidades/u3/Tema3_4_1");
+              },
             },
             {
               label: "3.4.2 Estándar EIA/TIA 569",
+               command: () => {
+                navigate("/unidades/u3/Tema3_4_2");
+              },
             },
             {
               label: "3.4.3 Estándar EIA/TIA 598 /A",
+              command: () => {
+                navigate("/unidades/u3/Tema3_4_3");
+              },
             },
             {
               label: "3.4.4 Estándar EIA/TIA 606.",
+              command: () => {
+                navigate("/unidades/u3/Tema3_4_4");
+              },
             },
           ],
         },
